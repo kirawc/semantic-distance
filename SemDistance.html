@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Load in jquery library & link to css + js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="SemDistance.css">
+    <script src="SemDistance.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- start page/general instructions -->
+    <div id="landingPage" class="instructions">
+      <b>Welcome!</b>
+      <br><br>
+      This task will last approximately 30 min and involves making judgements about images and sounds.
+      <br><br>
+      You must complete an audio test first to confirm you can hear the sounds.
+      <br><br>
+      Further instructions will be provided after the audio test.
+      <br><br>
+      <button id="landingButton"> Start audio test </button>
+    </div>
+
+    <!-- task to test audio (or any other training, filter, etc before main task) -->
+    <div id="preTest" class="instructions">
+      Adjust your audio to a comfortable level. Listen to the recording.
+      <br><br>
+      What word does the audio say? <br><br>
+      <audio id="testsound" src="stimuli/TESThello.mp3" controls=true> </audio><br><br>
+
+      <!-- buttons -->
+      <button id= "corrButton" class = "corr" class="audiotest"> HELLO </button>
+      <button id= "wrongButton1" class = "wrong" class="audiotest"> APPLE </button>
+      <button id= "wrongButton2" class = "wrong" class="audiotest"> SUNNY </button>
+      <button id= "wrongButton3" class = "wrong" class="audiotest"> OCEAN </button>
+
+      <!-- if correct answer, start task butotn -->
+      <button id="taskButton" class="instructions"> Correct! Show instructions </button>
+
+      <!-- if wrong answer, end task -->
+      <div id="failedpretask" class="instructions"> Sorry, you aren't eligible for this task. </div>
+
+    </div>
+
+    <!-- task instructions -->
+    <div id="taskExpl" class="instructions">
+
+      On each trial, you will see a prompt and two options. <br><br>
+      Select the option most similar to the prompt. <br><br>
+      To select the left option, press "c".
+      <br>
+      To select the right option, press "m".<br><br>
+      You must select an option on each trial.
+      <br>
+      If neither option seems very similar to the prompt, select the more similar option.
+      <br><br>
+      You will see 2 example trials and then the task will start. <br><br>
+      <button id="practiceButton"> Start practice trial </button>
+
+    </div>
+
+    <!-- start up page -->
+    <div id="startPage" class="instructions" > Practice finished. Task will stark now. </div>
+
+    <!-- ending page -->
+    <div id="endPage" class="instructions" > Task complete! Thank you! </div>
+
+    <!-- stimuli to preload -->
+    <div id="stimDiv" class="preload"> preload here </div>
+
+    <!-- experiment box -->
+    <div id="exptBox" class="expt">
+
+      <div id = "promptBox" class="expt">
+        Which is most similar to this? <br><br>
+        <img id="promptImg" src="" class="expt" height=200></img><br><br>
+        <!-- <audio id = "promptAud" src="" controls="controls"></audio>  -->
+        <button id = "playPrompt" class="expt" class="exptButtons"> Play prompt </button><br>
+        <button id = "pausePrompt" class="expt" class="exptButtons"> Pause prompt </button><br>
+
+      </div>
+
+      <div id = "option1Box" class="expt">
+        <img id="opt1Img" src="" class="expt" height=200></img>
+        <!-- <audio id = "opt1Aud" src="" controls="controls"></audio> -->
+        <button id = "playOpt1" class="expt" class="exptButtons"> Play Opt1 </button><br>
+        <button id = "pauseOpt1" class="expt" class="exptButtons"> Pause Opt1 </button>
+  <br><br>"c"
+
+      </div>
+
+      <div id = "option2Box" class="expt">
+        <img id="opt2Img" src="" class="expt" height=200></img>
+        <!-- <audio id = "opt2Aud" src="" class="expt" controls="controls"></audio> -->
+        <button id = "playOpt2" class="expt" class="exptButtons"> Play Opt2 </button><br>
+        <button id = "pauseOpt2" class="expt" class="exptButtons"> Pause Opt2 </button>
+        <br><br>"m"
+
+      </div>
+
+    </div>
+    </div>
+  </body
+
+</html>

@@ -1,0 +1,66 @@
+body {
+	font-size: 14pt;
+  font-family: sans-serif;
+  padding-top: 50px;
+  padding-left: 200px;
+  padding-right: 200px;
+
+}
+
+.preload {
+	display: none;
+}
+
+.instructions {
+	display: none;
+}
+
+#taskExpl {
+	display: none;
+	text-align: justify;
+}
+
+#landingPage {
+	display: block;
+}
+
+#exptBox {
+	display: none;
+}
+
+.exptButtons {
+	display: none;
+}
+
+.expt {
+	display: none;
+}
+
+.audiotest {
+	display: none;
+}
+
+#endPage {
+	display: none;
+	text-align: justify;
+}
+
+#promptBox {
+	display: none;
+	text-align: center;
+	padding-bottom: 50px;
+}
+
+#option1Box {
+	display: none;
+	float: left;
+	text-align: center;
+
+}
+
+#option2Box {
+	display: none;
+	float: right;
+	text-align: center;
+
+}
