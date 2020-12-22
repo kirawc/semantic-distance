@@ -27,6 +27,8 @@ var condsOrder = ["a","v","a", "a", "v", "a", "v", "v", "a", "v", "a"];
 var totalTrials = condsOrder.length;
 var stimTime = 5000;
 
+var pretestStim = ["sunny", "ocean", "hello", "apple"];
+
 // Initialize time
 var start = new Date;
 var startDate = start.getMonth() + "-" + start.getDate() + "-" + start.getFullYear();
@@ -44,19 +46,6 @@ $(document).ready(function(){
 
 });
 
-// Preload stimuli into a hidden div
-function preloadImgs(){
-
-   // append every img in visStim to preload div
-  for (var n_visStim=0; n_visStim<visStim.length; n_visStim++){
-
-    var img = document.createElement("IMG");
-    img.src = "stimuli/" + visStim[n_visStim];
-    $("#preload").append(img);
-
-  }
-}
-
 // ---------------------------
 //    SHOW INSTRUCTIONS + TEST AUDIO
 // ---------------------------
@@ -66,24 +55,27 @@ function runPretest(){
 
 	$("#landingPage").hide();
 
-	// select
+	// select audio
+	curr_word = pretestStim[getRandomInt(3)];
+	$("#testsound").attr("src", "stimuli/" + curr_word + ".mp3")
+
+	// make matching button the correct one
+	$("#" + curr_word).addClass("corr").removeClass("wrong")
 
 	// show
   $("#preTest").show();
-	$("#corrButton").show();
-	$("#wrongButton").show();
 
 	//
-	$("#corrButton").click(function(){
+	$(".corr").click(function(){
 		$("#taskButton").show()
-		$("#corrButton").hide()
+		$(".corr").hide()
 		$(".wrong").hide()
 
 })
 
 	$(".wrong").click(function(){
 		$("#failedpretask").show()
-		$("#corrButton").hide()
+		$(".corr").hide()
 		$(".wrong").hide()})
 
 	//
@@ -134,16 +126,13 @@ function runTrial(){
 
 	console.log(trialNum);
 
-	// hide everything at the start of each trial
-	$("#playPrompt").hide();
+	// hide everything at the start of each new trial
+	$("#promptImg").hide();
 	$("#opt1Img").hide();
 	$("#opt2Img").hide();
-	$("#promptImg").hide();
-	$("#playOpt1").hide();
-	$("#playOpt2").hide();
-	$("#pausePrompt").hide();
-	$("#pauseOpt1").hide();
-	$("#pauseOpt2").hide();
+	$("#promptAud").hide();
+	$("#opt1Aud").hide()
+	$("#opt2Aud").hide()
 
 	// select trial type
 	trialType = condsOrder[trialNum];
@@ -183,59 +172,39 @@ function showStim(trialStim, trialType){
 	if (trialType == "a"){ // Run specific for auditory prompt trials
 
   // Change image file sources
-	//$("#promptAud").attr("src", "stimuli/" + trialStim[0] + ".mp3")
-	prompt = new Audio("stimuli/" + trialStim[0] + ".mp3")
+	$("#promptAud").attr("src", "stimuli/" + trialStim[0] + ".mp3")
 	$("#opt1Img").attr("src","stimuli/" + trialStim[1] + ".jpg");
   $("#opt2Img").attr("src","stimuli/" + trialStim[2] + ".jpg");
 
-		// Change audio file sources + set up on click
-		$("#playPrompt").click(function(){
-			prompt.play();
-			$("#pausePrompt").show()
-		});
-
-		$("#pausePrompt").click(function(){
-			prompt.pause();
-		});
-
   // Show button & images
-		$("#playPrompt").show()
-		$("#opt1Img").show();
-  	$("#opt2Img").show();
+	$("#promptAud").show();
+	$("#opt1Img").show();
+	$("#opt2Img").show();
+
+	// Played times
+	x0 = document.getElementById("promptAud").played.end(0)
+	console.log("x0: " + x0)
 
 	}
 
 	else if (trialType = "v"){ // Run specifics for auditory prompt trials
 		// Change file sources
 		$("#promptImg").attr("src","stimuli/" + trialStim[0] + ".jpg");
-		opt1 = new Audio("stimuli/" + trialStim[1] + ".mp3")
-		opt2 = new Audio("stimuli/" + trialStim[2] + ".mp3")
-
-		// Set up audio buttons
-		$("#playOpt1").click(function(){
-			opt1.play();
-			$("#pauseOpt1").show()
-		});
-
-		$("#pauseOpt1").click(function(){
-			opt1.pause();
-		});
-
-		$("#playOpt2").click(function(){
-			opt2.play();
-			$("#pauseOpt2").show()
-		});
-
-		$("#pauseOpt2").click(function(){
-			opt2.pause();
-		});
+		$("#opt1Aud").attr("src","stimuli/" + trialStim[1] + ".mp3");
+	  $("#opt2Aud").attr("src","stimuli/" + trialStim[2] + ".mp3");
 
 		// Show button & images
 		$("#opt1Aud").show()
 		$("#opt2Aud").show()
 		$("#promptImg").show()
-		$("#playOpt1").show();
-  	$("#playOpt2").show();
+
+		// Played times
+		x1 = document.getElementById("opt1Aud").played.end(0)
+		console.log("x1: " + x1)
+
+		x2 = document.getElementById("opt2Aud").played.end(0)
+		console.log("x1: " + x2)
+
 
 	}
 

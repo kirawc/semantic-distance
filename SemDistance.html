@@ -28,13 +28,13 @@
       Adjust your audio to a comfortable level. Listen to the recording.
       <br><br>
       What word does the audio say? <br><br>
-      <audio id="testsound" src="stimuli/TESThello.mp3" controls=true> </audio><br><br>
+      <audio id="testsound" src="stimuli/hello.mp3" controls=true> </audio><br><br>
 
       <!-- buttons -->
-      <button id= "corrButton" class = "corr" class="audiotest"> HELLO </button>
-      <button id= "wrongButton1" class = "wrong" class="audiotest"> APPLE </button>
-      <button id= "wrongButton2" class = "wrong" class="audiotest"> SUNNY </button>
-      <button id= "wrongButton3" class = "wrong" class="audiotest"> OCEAN </button>
+      <button id= "hello" class = "wrong" class="audiotest"> HELLO </button>
+      <button id= "apple" class = "wrong" class="audiotest"> APPLE </button>
+      <button id= "sunny" class = "wrong" class="audiotest"> SUNNY </button>
+      <button id= "ocean" class = "wrong" class="audiotest"> OCEAN </button>
 
       <!-- if correct answer, start task butotn -->
       <button id="taskButton" class="instructions"> Correct! Show instructions </button>
@@ -74,28 +74,21 @@
     <div id="exptBox" class="expt">
 
       <div id = "promptBox" class="expt">
-        Which is most similar to this? <br><br>
+        Which option is most similar to this? <br><br>
         <img id="promptImg" src="" class="expt" height=200></img><br><br>
-        <!-- <audio id = "promptAud" src="" controls="controls"></audio>  -->
-        <button id = "playPrompt" class="expt" class="exptButtons"> Play prompt </button><br>
-        <button id = "pausePrompt" class="expt" class="exptButtons"> Pause prompt </button><br>
-
+        <audio id = "promptAud" src="" controls=true></audio>
       </div>
 
       <div id = "option1Box" class="expt">
         <img id="opt1Img" src="" class="expt" height=200></img>
-        <!-- <audio id = "opt1Aud" src="" controls="controls"></audio> -->
-        <button id = "playOpt1" class="expt" class="exptButtons"> Play Opt1 </button><br>
-        <button id = "pauseOpt1" class="expt" class="exptButtons"> Pause Opt1 </button>
+        <audio id = "opt1Aud" src="" controls=true></audio>
   <br><br>"c"
 
       </div>
 
       <div id = "option2Box" class="expt">
         <img id="opt2Img" src="" class="expt" height=200></img>
-        <!-- <audio id = "opt2Aud" src="" class="expt" controls="controls"></audio> -->
-        <button id = "playOpt2" class="expt" class="exptButtons"> Play Opt2 </button><br>
-        <button id = "pauseOpt2" class="expt" class="exptButtons"> Pause Opt2 </button>
+        <audio id = "opt2Aud" src="" controls="controls"></audio>
         <br><br>"m"
 
       </div>
