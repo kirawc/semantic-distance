@@ -1,8 +1,8 @@
 // ---------------------------
-//    SETTING UP
+//    SET UP & INITIALIZATIONS
 // ---------------------------
 
-// Data structure (how the data will be saved)
+// Create data structure for save files (cols = vars below; rows = trial)
 var thisData = {
 	"subjID":[],
 	"experimentName":[],
@@ -18,16 +18,16 @@ var thisData = {
 // Subject info
 var subjID = randomIntFromInterval(100000, 999999);
 
-// Task structure (stimuli, condition ns, etc)
+// Load in task structure (stimuli, condition ns, etc)
 var Stim = {"animals":["a1","a2","a3","a4","a5", "a6", "a7", "a8", "a9", "a10"],
  "instruments":["i1","i2","i3","i4","i5", "i6", "i7", "i8", "i9", "i10"],
 "tools":["t1","t2","t3","t4","t5", "t6", "t7", "t8", "t9", "t10"]};
-
 var condsOrder = ["a","v","a", "a", "v", "a", "v", "v", "a", "v", "a"];
 var totalTrials = condsOrder.length;
-var stimTime = 5000;
 
+// Load in pretest word options & practice trial stimuli
 var pretestStim = ["sunny", "ocean", "hello", "apple"];
+var practiceStim = {1:[]}
 
 // Initialize time
 var start = new Date;
@@ -35,6 +35,8 @@ var startDate = start.getMonth() + "-" + start.getDate() + "-" + start.getFullYe
 var startTime = start.getHours() + "-" + start.getMinutes() + "-" + start.getSeconds();
 
 // Initialize variables
+var pracNum = 0;
+var pracTotal = 1;
 var trialNum = 0;
 var currTrial = 0;
 var endExpTime, startExpTime, cond;
@@ -55,17 +57,17 @@ function runPretest(){
 
 	$("#landingPage").hide();
 
-	// select audio
+	// Select word & change pretest audio to that recording
 	curr_word = pretestStim[getRandomInt(3)];
 	$("#testsound").attr("src", "stimuli/" + curr_word + ".mp3")
 
-	// make matching button the correct one
+	// For the selected word, change associated button to "correct"
 	$("#" + curr_word).addClass("corr").removeClass("wrong")
 
-	// show
+	// Show pretest div (audio + sounds)
   $("#preTest").show();
 
-	//
+	// If button labeled correct is click, show task button
 	$(".corr").click(function(){
 		$("#taskButton").show()
 		$(".corr").hide()
@@ -73,12 +75,13 @@ function runPretest(){
 
 })
 
+  // If any button labeled wrong correct, show "not eligible" message
 	$(".wrong").click(function(){
 		$("#failedpretask").show()
 		$(".corr").hide()
 		$(".wrong").hide()})
 
-	//
+	// When the task button is clicked, show instr
   $("#taskButton").click(function(){showInstr()})
 
 }
@@ -86,19 +89,67 @@ function runPretest(){
 // Show start instructions
 function showInstr(){
 
+	// Hide previous
 	$("#preTest").hide();
 	$(".instructions").hide();
   $("#exptBox").hide();
+
+	// Show instructions
   $("#taskExpl").show();
-  $("#practiceButton").click(function(){startTask()})
+
+	// When button is clicked, start practice trials
+	$("#practiceButton").click(function(){
+
+		// Hide everything
+		$("#taskExpl").hide();
+		$(".instructions").hide();
+		$(".exptButtons").hide();
+		$("#exptBox").show();
+
+		// Run practice trials
+		runPractice(); })
 
 }
 
 // Run example trials
-function practiceTrials(){
+function runPractice(){
 
-	trialStim = ["a1", "a2", "a3"]
-	showStim(trialStim, "v")
+	// Hide everything
+	$("#promptImg").hide();
+	$("#opt1Img").hide();
+	$("#opt2Img").hide();
+	$("#promptAud").hide();
+	$("#opt1Aud").hide()
+	$("#opt2Aud").hide()
+
+	// Assign trial stimuli & type (always same for 1st & 2nd)
+	if (pracNum == 0){
+	trialType= "a";
+	trialStim=["typing", "printer_02s", "pen_11s"];
+}
+	else {
+		trialType = "v"
+		trialStim=["airplane_12n","car","train"];
+	};
+
+	// Actually show stimuli/practice trial
+	showStim(trialStim, trialType);
+
+	console.log("practice " + pracNum)
+
+	// Run through practice trials then start real trials
+	if (pracNum < pracTotal+1){
+
+		$(document).keypress(function(){
+			pracNum++;
+			$(document).unbind("keypress");
+			runPractice();
+		})
+	}
+
+	else {
+	 startTask()
+	}
 
 	}
 
@@ -106,19 +157,28 @@ function practiceTrials(){
 //    TASK ITSELF
 // ---------------------------
 
-// Hide instructions, set up experiment, then run trials
+// Hide practice, set up experiment, then run trials
 function startTask(){
 
-	// indicate this is the start of the real trial
-	$("#startPage").show()
+	// Hide everything
+	$(".exptButtons").hide();
+	$("#exptBox").hide();
+	$("#promptImg").hide();
+	$("#opt1Img").hide();
+	$("#opt2Img").hide();
+	$("#promptAud").hide();
+	$("#opt1Aud").hide()
+	$("#opt2Aud").hide()
 
-  // set up to start expt
-	$("#taskExpl").hide();
-  $(".instructions").hide();
-  $(".exptButtons").hide();
-  $("#exptBox").show();
+	// Show end of practice message
+	$("#endpracticePage").show()
 
-  runTrial() // Runs a trial until
+// Waits 1 sec then runs trial
+  sleep(1000).then(() => {
+		$("#endpracticePage").hide();
+		$("#exptBox").show();
+		runTrial(); });
+
 }
 
 // Run through nTrials trials
@@ -143,10 +203,10 @@ function runTrial(){
 	whichStim = uniqueRandoms(3, 0, 9); // select 3 of 9 in category at random
 	trialStim = [c_cat[whichStim[0]], c_cat[whichStim[1]], c_cat[whichStim[2]]];
 
-	// actually present the stimuli
-	 showStim(trialStim, trialType);
+		// actually present the select stimuli
+		showStim(trialStim, trialType);
 
-	 //
+	 // Keep running trials until you hit the total trian num
 	 if (trialNum < totalTrials+1){
 
 		 $(document).keypress(function(){
@@ -164,6 +224,7 @@ function runTrial(){
 
 // Actual stimuli
 function showStim(trialStim, trialType){
+
 	// show all the divs
 		$("#promptBox").show();
   	$("#option1Box").show();
@@ -182,8 +243,8 @@ function showStim(trialStim, trialType){
 	$("#opt2Img").show();
 
 	// Played times
-	x0 = document.getElementById("promptAud").played.end(0)
-	console.log("x0: " + x0)
+	//x0 = document.getElementById("promptAud").played.end(0)
+	//console.log("x0: " + x0)
 
 	}
 
@@ -199,12 +260,11 @@ function showStim(trialStim, trialType){
 		$("#promptImg").show()
 
 		// Played times
-		x1 = document.getElementById("opt1Aud").played.end(0)
-		console.log("x1: " + x1)
+		//x1 = document.getElementById("opt1Aud").played.end(0)
+		//console.log("x1: " + x1)
 
-		x2 = document.getElementById("opt2Aud").played.end(0)
-		console.log("x1: " + x2)
-
+		//x2 = document.getElementById("opt2Aud").played.end(0)
+		//console.log("x1: " + x2)
 
 	}
 

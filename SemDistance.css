@@ -45,6 +45,11 @@ body {
 	text-align: justify;
 }
 
+#endpracticePage {
+	display: none;
+	text-align: justify;
+}
+
 #promptBox {
 	display: none;
 	text-align: center;
