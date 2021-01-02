@@ -129,7 +129,7 @@ function runPractice(){
 }
 	else {
 		trialType = "v"
-		trialStim=["airplane_12n","car","train"];
+		trialStim=["bike_10s","car","train"];
 	};
 
 	// Actually show stimuli/practice trial
