@@ -39,6 +39,7 @@ var pracNum = 0;
 var pracTotal = 1;
 var trialNum = 0;
 var currTrial = 0;
+var audioFinish = 0;
 var endExpTime, startExpTime, cond;
 
 // Ready function -- how it loads up at start
@@ -72,14 +73,14 @@ function runPretest(){
 		$("#taskButton").show()
 		$(".corr").hide()
 		$(".wrong").hide()
-
-})
+	});
 
   // If any button labeled wrong correct, show "not eligible" message
 	$(".wrong").click(function(){
 		$("#failedpretask").show()
 		$(".corr").hide()
-		$(".wrong").hide()})
+		$(".wrong").hide()
+	});
 
 	// When the task button is clicked, show instr
   $("#taskButton").click(function(){showInstr()})
@@ -105,6 +106,9 @@ function showInstr(){
 		$(".instructions").hide();
 		$(".exptButtons").hide();
 		$("#exptBox").show();
+		$("#promptBox").show();
+		$("option1Box").show();
+		$("option2Box").show();
 
 		// Run practice trials
 		runPractice(); })
@@ -115,12 +119,14 @@ function showInstr(){
 function runPractice(){
 
 	// Hide everything
+	// (images)
 	$("#promptImg").hide();
 	$("#opt1Img").hide();
 	$("#opt2Img").hide();
-	$("#promptAud").hide();
-	$("#opt1Aud").hide()
-	$("#opt2Aud").hide()
+	// (buttons)
+	$("#playPrompt").hide();
+	$("#playOpt1").hide();
+	$("#playOpt2").hide();
 
 	// Assign trial stimuli & type (always same for 1st & 2nd)
 	if (pracNum == 0){
@@ -134,7 +140,6 @@ function runPractice(){
 
 	// Actually show stimuli/practice trial
 	showStim(trialStim, trialType);
-
 	console.log("practice " + pracNum)
 
 	// Run through practice trials then start real trials
@@ -150,7 +155,6 @@ function runPractice(){
 	else {
 	 startTask()
 	}
-
 	}
 
 // ---------------------------
@@ -161,38 +165,49 @@ function runPractice(){
 function startTask(){
 
 	// Hide everything
-	$(".exptButtons").hide();
+	// (divs)
 	$("#exptBox").hide();
+	$("#promptBox").hide();
+	$("option1Box").hide();
+	$("option2Box").hide();
+	// (images)
 	$("#promptImg").hide();
 	$("#opt1Img").hide();
 	$("#opt2Img").hide();
-	$("#promptAud").hide();
-	$("#opt1Aud").hide()
-	$("#opt2Aud").hide()
+	// (buttons)
+	$("#playPrompt").hide();
+	$("#playOpt1").hide();
+	$("#playOpt2").hide();
 
 	// Show end of practice message
 	$("#endpracticePage").show()
 
-// Waits 1 sec then runs trial
+// Waits 1 sec then run real trials
   sleep(1000).then(() => {
 		$("#endpracticePage").hide();
 		$("#exptBox").show();
-		runTrial(); });
+		$("#promptBox").show();
+		$("#option1Box").show();
+		$("#option2Box").show();
 
+		runTrial(); });
 }
 
 // Run through nTrials trials
 function runTrial(){
 
-	console.log(trialNum);
+	$(document).unbind("keypress");
 
-	// hide everything at the start of each new trial
-	$("#promptImg").hide();
+	console.log("trial " + trialNum);
+	console.log("audio val @ start" + audioFinish);
+
+	// hide everything inside divs at the start of each new trial
 	$("#opt1Img").hide();
 	$("#opt2Img").hide();
-	$("#promptAud").hide();
-	$("#opt1Aud").hide()
-	$("#opt2Aud").hide()
+	$("#promptImg").hide();
+	$("#playPrompt").hide();
+	$("#playOpt1").hide();
+	$("#playOpt2").hide();
 
 	// select trial type
 	trialType = condsOrder[trialNum];
@@ -203,77 +218,79 @@ function runTrial(){
 	whichStim = uniqueRandoms(3, 0, 9); // select 3 of 9 in category at random
 	trialStim = [c_cat[whichStim[0]], c_cat[whichStim[1]], c_cat[whichStim[2]]];
 
-		// actually present the select stimuli
-		showStim(trialStim, trialType);
+	// actually present the select stimuli
+	showStim(trialStim, trialType);
 
-	 // Keep running trials until you hit the total trian num
-	 if (trialNum < totalTrials+1){
+	// Keep running trials until you hit the total trian num
+	if (trialNum < totalTrials+1){
 
-		 $(document).keypress(function(){
-			 trialNum++;
-			 $(document).unbind("keypress");
-			 runTrial();
-		 })
-	 }
-
-	else {
-		endExpt()
+		$(document).keypress(function(){
+			trialNum++;
+			$(document).unbind("keypress");
+			runTrial();
+		})
 	}
 
-  }
+	else {
+	 endExpt()
+	}
+};
 
-// Actual stimuli
-function showStim(trialStim, trialType){
+	function showStim(trialStim, trialType){
 
-	// show all the divs
-		$("#promptBox").show();
-  	$("#option1Box").show();
-  	$("#option2Box").show();
+	$("#promptBox").show();
+	$("#option1Box").show();
+	$("#option2Box").show();
 
 	if (trialType == "a"){ // Run specific for auditory prompt trials
 
   // Change image file sources
-	$("#promptAud").attr("src", "stimuli/" + trialStim[0] + ".mp3")
+	//$("#promptAud").attr("src", "stimuli/" + trialStim[0] + ".mp3")
+	prompt = new Audio("stimuli/" + trialStim[0] + ".mp3")
 	$("#opt1Img").attr("src","stimuli/" + trialStim[1] + ".jpg");
   $("#opt2Img").attr("src","stimuli/" + trialStim[2] + ".jpg");
 
-  // Show button & images
-	$("#promptAud").show();
-	$("#opt1Img").show();
-	$("#opt2Img").show();
+		// Change audio file sources + set up on click
+		$("#playPrompt").click(function(){
+			prompt.play();
+		});
 
-	// Played times
-	//x0 = document.getElementById("promptAud").played.end(0)
-	//console.log("x0: " + x0)
+  // Show button & images
+		$("#playPrompt").show()
+		$("#opt1Img").show();
+  	$("#opt2Img").show();
+
+		// Collect if audio has played or not
+		prompt.onended = function(){ console.log("ended prompt"); audioFinish += 1; detectKeyPress();
+		console.log("audio val after click?" + audioFinish)}
 
 	}
 
 	else if (trialType = "v"){ // Run specifics for auditory prompt trials
 		// Change file sources
 		$("#promptImg").attr("src","stimuli/" + trialStim[0] + ".jpg");
-		$("#opt1Aud").attr("src","stimuli/" + trialStim[1] + ".mp3");
-	  $("#opt2Aud").attr("src","stimuli/" + trialStim[2] + ".mp3");
+		opt1 = new Audio("stimuli/" + trialStim[1] + ".mp3")
+		opt2 = new Audio("stimuli/" + trialStim[2] + ".mp3")
+
+		// Set up audio buttons
+		$("#playOpt1").click(function(){
+			opt1.play();
+		});
+
+		$("#playOpt2").click(function(){
+			opt2.play();
+		});
 
 		// Show button & images
-		$("#opt1Aud").show()
-		$("#opt2Aud").show()
 		$("#promptImg").show()
+		$("#playOpt1").show();
+  	$("#playOpt2").show();
 
-		// Played times
-		//x1 = document.getElementById("opt1Aud").played.end(0)
-		//console.log("x1: " + x1)
-
-		//x2 = document.getElementById("opt2Aud").played.end(0)
-		//console.log("x1: " + x2)
-
+		// Only detect key press IF -- this means it can't move on because
+		// without playing because you need a key press
+		opt1.onended = function(){ console.log("ended opt 1"); audioFinish += 0.5; detectKeyPress();}
+		opt2.onended = function(){ console.log("ended opt 2"); audioFinish += 0.5; detectKeyPress();}
 	}
-
-	// Listen for keypress
-	detectKeyPress();
-
-	//
-	//saveTrialData();
-
 }
 
 // Collect response
