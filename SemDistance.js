@@ -27,7 +27,7 @@ var totalTrials = condsOrder.length;
 
 // Load in pretest word options & practice trial stimuli
 var pretestStim = ["sunny", "ocean", "hello", "apple"];
-var practiceStim = {1:[]}
+var practiceStim = {1:2}
 
 // Initialize time
 var start = new Date;
@@ -50,7 +50,7 @@ $(document).ready(function(){
 });
 
 // ---------------------------
-//    SHOW INSTRUCTIONS + TEST AUDIO
+//    TEST AUDIO
 // ---------------------------
 
 // Run audio pretest
@@ -87,6 +87,10 @@ function runPretest(){
 
 }
 
+// ---------------------------
+//    INSTRUCTIONS
+// ---------------------------
+
 // Show start instructions
 function showInstr(){
 
@@ -115,7 +119,10 @@ function showInstr(){
 
 }
 
-// Run example trials
+// ---------------------------
+//    PRACTICE TRIALS
+// ---------------------------
+
 function runPractice(){
 
 	// Hide everything
@@ -130,35 +137,22 @@ function runPractice(){
 
 	// Assign trial stimuli & type (always same for 1st & 2nd)
 	if (pracNum == 0){
-	trialType= "a";
-	trialStim=["typing", "printer_02s", "pen_11s"];
-}
+		trialType= "a";
+		trialStim=["typing", "printer_02s", "pen_11s"];
+	}
 	else {
 		trialType = "v"
 		trialStim=["bike_10s","car","train"];
 	};
 
-	// Actually show stimuli/practice trial
-	showStim(trialStim, trialType);
+	// Actually show stimuli/practice tria
+	showStim(trialStim, trialType, 0); // 0 indicates it is a practice trial
 	console.log("practice " + pracNum)
 
-	// Run through practice trials then start real trials
-	if (pracNum < pracTotal+1){
-
-		$(document).keypress(function(){
-			pracNum++;
-			$(document).unbind("keypress");
-			runPractice();
-		})
-	}
-
-	else {
-	 startTask()
-	}
-	}
+}
 
 // ---------------------------
-//    TASK ITSELF
+//    MAIN TRIALS
 // ---------------------------
 
 // Hide practice, set up experiment, then run trials
@@ -196,10 +190,7 @@ function startTask(){
 // Run through nTrials trials
 function runTrial(){
 
-	$(document).unbind("keypress");
-
 	console.log("trial " + trialNum);
-	console.log("audio val @ start" + audioFinish);
 
 	// hide everything inside divs at the start of each new trial
 	$("#opt1Img").hide();
@@ -219,24 +210,13 @@ function runTrial(){
 	trialStim = [c_cat[whichStim[0]], c_cat[whichStim[1]], c_cat[whichStim[2]]];
 
 	// actually present the select stimuli
-	showStim(trialStim, trialType);
-
-	// Keep running trials until you hit the total trian num
-	if (trialNum < totalTrials+1){
-
-		$(document).keypress(function(){
-			trialNum++;
-			$(document).unbind("keypress");
-			runTrial();
-		})
-	}
-
-	else {
-	 endExpt()
-	}
+	showStim(trialStim, trialType, 1); // 1 indicates it's not a practice trial
 };
 
-	function showStim(trialStim, trialType){
+
+function showStim(trialStim, trialType, practiceOrNot){
+
+	audioFinish = 0; // reset to 0
 
 	$("#promptBox").show();
 	$("#option1Box").show();
@@ -261,9 +241,12 @@ function runTrial(){
   	$("#opt2Img").show();
 
 		// Collect if audio has played or not
-		prompt.onended = function(){ console.log("ended prompt"); audioFinish += 1; detectKeyPress();
-		console.log("audio val after click?" + audioFinish)}
-
+		if (practiceOrNot == 0){
+			prompt.onended = function(){console.log("end prompt"); detectKeyPress();(audioFinish += 1); nextPractice()}
+		}
+		else if (practiceOrNot == 1){
+			prompt.onended = function(){console.log("end prompt"); detectKeyPress();(audioFinish += 1); nextTrial()}
+		}
 	}
 
 	else if (trialType = "v"){ // Run specifics for auditory prompt trials
@@ -286,11 +269,50 @@ function runTrial(){
 		$("#playOpt1").show();
   	$("#playOpt2").show();
 
-		// Only detect key press IF -- this means it can't move on because
-		// without playing because you need a key press
-		opt1.onended = function(){ console.log("ended opt 1"); audioFinish += 0.5; detectKeyPress();}
-		opt2.onended = function(){ console.log("ended opt 2"); audioFinish += 0.5; detectKeyPress();}
+		if (practiceOrNot == 0){
+			opt1.onended = function(){console.log("end opt 1"); detectKeyPress(); nextPractice()}
+			opt2.onended = function(){console.log("end opt 2"); detectKeyPress(); nextPractice()}
+		}
+		else if (practiceOrNot == 1){
+			opt1.onended = function(){console.log("end opt 1"); detectKeyPress(); nextTrial()}
+			opt2.onended = function(){console.log("end opt 2"); detectKeyPress(); nextTrial()}
+		}
+
 	}
+}
+
+function nextPractice(){
+
+	// Run through practice trials then start real trials
+	if (pracNum < pracTotal+1){
+
+		$(document).keypress(function(){
+			pracNum++;
+			$(document).unbind("keypress");
+			runPractice();
+		})
+	}
+
+	else {
+	 startTask()
+	}
+}
+
+function nextTrial(){
+
+	// Keep running trials until you hit the total trian num
+	if (trialNum < totalTrials){
+
+		$(document).keypress(function(){
+			trialNum++;
+			$(document).unbind("keypress");
+			runTrial();
+		})
+	}
+
+	else {
+	 endExpt()
+ }
 }
 
 // Collect response
