@@ -13,6 +13,7 @@ body {
 
 .instructions {
 	display: none;
+	text-align: center justify;
 }
 
 #taskExpl {
@@ -26,6 +27,7 @@ body {
 
 #exptBox {
 	display: none;
+	width: 500px;
 }
 
 .exptButtons {
@@ -53,7 +55,9 @@ body {
 #promptBox {
 	display: none;
 	text-align: center;
-	padding-bottom: 50px;
+	padding-bottom: 25px;
+	margin: auto;
+
 }
 
 #option1Box {

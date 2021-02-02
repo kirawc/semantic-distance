@@ -6,24 +6,95 @@
 var thisData = {
 	"subjID":[],
 	"experimentName":[],
+	"versionName":[],
+	"windowWidth":[],
+	"windowHeight":[],
+	"screenWidth":[],
+	"screenHeight":[],
 	"startDate":[],
 	"startTime":[],
 	"trialNum":[],
 	"cond":[],
 	"keyPress":[],
-	"accuracy":[],
-	"RT":[]
+	"RT":[],
 };
+
+// set subject ID as a random 6 digit number
+var subjID = randomIntFromInterval(100000, 999999);
+
+// start time variables
+var start = new Date;
+var startDate = start.getMonth() + "-" + start.getDate() + "-" + start.getFullYear();
+var startTime = start.getHours() + "-" + start.getMinutes() + "-" + start.getSeconds();
+
+// initialize empty variables
+var endExpTime, startExpTime, RT, key, fixTime, cond;
 
 // Subject info
 var subjID = randomIntFromInterval(100000, 999999);
 
 // Load in task structure (stimuli, condition ns, etc)
-var Stim = {"animals":["a1","a2","a3","a4","a5", "a6", "a7", "a8", "a9", "a10"],
- "instruments":["i1","i2","i3","i4","i5", "i6", "i7", "i8", "i9", "i10"],
-"tools":["t1","t2","t3","t4","t5", "t6", "t7", "t8", "t9", "t10"]};
-var condsOrder = ["a","v","a", "a", "v", "a", "v", "v", "a", "v", "a"];
-var totalTrials = condsOrder.length;
+// LOAD COUNTERBALANCING CSV and EXPERIMENT SEQUENCE JSON FILE
+var data = $.ajax({
+				url: 'randomizations/summary.csv',
+				dataType: 'text',
+			}).done(successFunction);
+
+function successFunction(data) { // converts counterbalancing csv to JS array
+		var allRows = data.split(/\r?\n|\r/);
+		// table is an array with each row appended, i.e. row 0 = table[0]
+		var table = [];
+		for (var singleRow = 0; singleRow < allRows.length; singleRow++) {
+
+			 var rowCells = allRows[singleRow].split(',');
+				for (var rowCell = 0; rowCell < rowCells.length; rowCell++) {
+					if (rowCell == 0){
+						var table_row = []
+					}
+					table_row.push(rowCells[rowCell]);
+				}
+				table.push(table_row);
+
+	}
+	findRow(table); // calls function to find row to be sampled
+}
+
+function findRow(table){
+	var found = false;
+	for (var row = 1; row < table.length; row++){
+		var sampled = table[row][1];
+		if (found == false){
+			if (sampled == "0"){
+				var seq_filepath = table[row][0]; // selects sequence filepath that has not been sampled --> 0
+				var found = true;
+			}
+		}
+	}
+	var stim_seq = $.ajax({ // loads in stimulus sequence from server
+									url: seq_filepath,
+									dataType: 'json',
+									success: function (data) {
+										stim_seq = data;
+									},
+				});
+
+
+//var Stim = {"animals":["a1","a2","a3","a4","a5", "a6", "a7", "a8", "a9", "a10"],
+// "instruments":["i1","i2","i3","i4","i5", "i6", "i7", "i8", "i9", "i10"],
+//"tools":["t1","t2","t3","t4","t5", "t6", "t7", "t8", "t9", "t10"]};
+
+//var condsOrder = ["v", "v","a","a"];
+//var totalTrials = condsOrder.length;
+
+var vers = stim_seq[0][0]; // unique version number
+var set = stim_seq[1][0];
+var set = stim_seq[2][0];
+var modality = stim_seq[3]
+var prompt = stim_seq[4]
+var opt1 = stim_seq[5]
+var opt2 = stim_seq[6]
+
+var totalTrials = modality.length;
 
 // Load in pretest word options & practice trial stimuli
 var pretestStim = ["sunny", "ocean", "hello", "apple"];
@@ -45,7 +116,7 @@ var endExpTime, startExpTime, cond;
 // Ready function -- how it loads up at start
 $(document).ready(function(){
 
-  $("#landingButton").click(function(){runPretest()})
+  $("#landingButton").click(function(){showInstr()})
 
 });
 
@@ -53,7 +124,7 @@ $(document).ready(function(){
 //    TEST AUDIO
 // ---------------------------
 
-// Run audio pretest
+// Run audio pretest -- currently skipped because I put it in the mturk instead but leaving func in
 function runPretest(){
 
 	$("#landingPage").hide();
@@ -95,6 +166,7 @@ function runPretest(){
 function showInstr(){
 
 	// Hide previous
+	$("#landingPage").hide();
 	$("#preTest").hide();
 	$(".instructions").hide();
   $("#exptBox").hide();
@@ -116,7 +188,6 @@ function showInstr(){
 
 		// Run practice trials
 		runPractice(); })
-
 }
 
 // ---------------------------
@@ -201,12 +272,13 @@ function runTrial(){
 	$("#playOpt2").hide();
 
 	// select trial type
-	trialType = condsOrder[trialNum];
+	trialType = modality[trialNum];
+	trialStim = [prompt[trialNum], opt1[trialNum], opt2[trialNum]]
 
 	// select stimuli for this trial (one from each category)
-	var categories = shuffle(Object.keys(Stim));
-	c_cat = shuffle(Stim[categories[0]]);
-	whichStim = uniqueRandoms(3, 0, 9); // select 3 of 9 in category at random
+	//var categories = shuffle(Object.keys(Stim));
+	//c_cat = shuffle(Stim[categories[0]]);
+	//whichStim = uniqueRandoms(3, 0, 9); // select 3 of 9 in category at random
 	trialStim = [c_cat[whichStim[0]], c_cat[whichStim[1]], c_cat[whichStim[2]]];
 
 	// actually present the select stimuli
@@ -215,8 +287,6 @@ function runTrial(){
 
 
 function showStim(trialStim, trialType, practiceOrNot){
-
-	audioFinish = 0; // reset to 0
 
 	$("#promptBox").show();
 	$("#option1Box").show();
@@ -301,13 +371,19 @@ function nextPractice(){
 function nextTrial(){
 
 	// Keep running trials until you hit the total trian num
-	if (trialNum < totalTrials){
+	if (trialNum < totalTrials+1){
 
 		$(document).keypress(function(){
 			trialNum++;
 			$(document).unbind("keypress");
 			runTrial();
+
+			endTrialTime = new Date;
+			RT = endTrialTime - startTrialTime;
+
+			saveTrialData();
 		})
+
 	}
 
 	else {
@@ -340,11 +416,79 @@ function endExpt(){
   $("#exptBox").hide();
   $(".expt").hide();
   $("#endPage").show();
-	//saveAllData();
+	$("#endPage").append("<br><p style='text-align:center'><strong>Your unique completion code is: </strong>" +subjID+"</p>");
+	$("#revealCodeButton").hide();
+
+	saveAllData();
 
 }
 
 // Save data
+function endExperiment(){
+	// gives participant their unique code and saves data to server --> this page should look identical to redirect html (revealCode.html)
+	$("#lastBlockInstructions").append("<br><p style='text-align:center'><strong>Your unique completion code is: </strong>" +subjID+"</p>");
+	$("#revealCodeButton").hide();
+	saveAllData();
+}
+
+// ---------------------
+// saving data functions
+// ---------------------
+
+function saveTrialData(){
+	// at the end of each trial, appends values to data dictionary
+
+	// global variables --> will be repetitive, same value for every row (each row will represent one trial)
+	thisData["subjID"].push(subjID);
+	thisData["experimentName"].push("sem-dist");
+	thisData["versionName"].push("v1");
+	thisData["windowWidth"].push($(window).width());
+	thisData["windowHeight"].push($(window).height());
+	thisData["screenWidth"].push(screen.width);
+	thisData["screenHeight"].push(screen.height);
+	thisData["startDate"].push(startDate);
+	thisData["startTime"].push(startTime);
+
+	// trial-by-trial variables, changes each time this function is called
+	thisData["trialNum"].push(trialNum);
+	thisData["cond"].push(cond);
+	thisData["keyPress"].push(key);
+	thisData["RT"].push(RT);
+}
+
+function saveAllData() {
+	// saves last pieces of data that needed to be collected at the end, and calls sendToServer function
+	// add experimentTime and totalTime to data dictionary
+	var experimentTime = (endExpTime - startExpTime);
+	var totalTime = ((new Date()) - start);
+	thisData["experimentTime"]=Array(trialNum).fill(experimentTime);
+	thisData["totalTime"]=Array(trialNum).fill(totalTime);
+
+	// change values for input divs to pass to php
+	$("#experimentData").val(JSON.stringify(thisData));
+	$("#completedTrialsNum").val(trialNum); //how many trials this participant completed
+
+	sendToServer();
+}
+
+function sendToServer() {
+	// send the data to the server as string (which will be parsed IN php)
+
+	$.ajax({ //same as $.post, but allows for more options to be specified
+		headers:{"Access-Control-Allow-Origin": "*", "Content-Type": "text/csv"}, //headers for request that allow for cross-origin resource sharing (CORS)
+		type: "POST", //post instead of get because data is being sent to the server
+		url: $("#saveData").attr("action"), //url to php
+		data: $("#experimentData").val(), //not sure why specified here, since we are using the data from the input variable, but oh well
+
+		// if it works OR fails, submit the form
+		success: function(){
+			document.forms[0].submit();
+		},
+		error: function(){
+			document.forms[0].submit();
+		}
+	});
+}
 
 
 // ---------------------------
