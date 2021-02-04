@@ -1,8 +1,80 @@
 // ---------------------------
-//    SET UP & INITIALIZATIONS
+//    GET RANDOMIZATION/TRIAL SEQUENCE
 // ---------------------------
+trials = new Array;
 
 // Create data structure for save files (cols = vars below; rows = trial)
+var data = $.ajax({
+  url: 'randomizations/summary.csv',
+  dataType: 'text',
+}).done(pickRnd);
+
+function pickRnd(data) {
+
+	// converts CSV to array & selects row (randomization)
+  var allRows = data.split(/\r?\n|\r/);
+  var table = [];
+  for (var singleRow = 0; singleRow < allRows.length; singleRow++) {
+    var rowCells = allRows[singleRow].split(',');
+    for (var rowCell = 0; rowCell < rowCells.length; rowCell++) {
+      if (rowCell == 0){
+        var table_row = []
+      }
+      table_row.push(rowCells[rowCell]);
+    }
+    table.push(table_row);
+  }
+
+  // selects a row
+	var found = false;
+		for (var row = 1; row < table.length; row++){
+				var sampled = table[row][1];
+				if (found == false){
+					if (sampled == "0"){
+						//var seq_filepath = table[row][0]; // selects sequence filepath that has not been sampled --> 0
+						var selected_row = row;
+						var found = true;
+					 }
+				 }
+			 }
+
+ print(selected_row)
+ //
+ seq_filepath = ['randomizations/' + table[selected_row][0]].toString();
+ print(seq_filepath)
+
+ var seqCSV = $.ajax({
+   url: seq_filepath,
+   dataType: 'text',
+ }).done(loadTrialSeq)};
+
+function loadTrialSeq(seqCSV) {
+
+	var allRows = seqCSV.split(/\r?\n|\r/);
+	var table = [];
+
+	for (var singleRow = 0; singleRow < allRows.length; singleRow++) {
+		var rowCells = allRows[singleRow].split(',');
+		for (var rowCell = 0; rowCell < rowCells.length; rowCell++) {
+			if (rowCell == 0){
+				var table_row = []
+			}
+			table_row.push(rowCells[rowCell]);
+		}
+		table.push(table_row);
+
+	trials.push(table);
+
+}}
+
+//setTimeout(function(){ totalTrials = trials.length; }, 1000);
+
+totalTrials = 5;
+
+// ---------------------------
+//    REST OF SET UP
+// ---------------------------
+// Create data array for save file
 var thisData = {
 	"subjID":[],
 	"experimentName":[],
@@ -19,7 +91,7 @@ var thisData = {
 	"RT":[],
 };
 
-// set subject ID as a random 6 digit number
+// Set subject ID as a random 6 digit number
 var subjID = randomIntFromInterval(100000, 999999);
 
 // start time variables
@@ -28,73 +100,7 @@ var startDate = start.getMonth() + "-" + start.getDate() + "-" + start.getFullYe
 var startTime = start.getHours() + "-" + start.getMinutes() + "-" + start.getSeconds();
 
 // initialize empty variables
-var endExpTime, startExpTime, RT, key, fixTime, cond;
-
-// Subject info
-var subjID = randomIntFromInterval(100000, 999999);
-
-// Load in task structure (stimuli, condition ns, etc)
-// LOAD COUNTERBALANCING CSV and EXPERIMENT SEQUENCE JSON FILE
-var data = $.ajax({
-				url: 'randomizations/summary.csv',
-				dataType: 'text',
-			}).done(successFunction);
-
-function successFunction(data) { // converts counterbalancing csv to JS array
-		var allRows = data.split(/\r?\n|\r/);
-		// table is an array with each row appended, i.e. row 0 = table[0]
-		var table = [];
-		for (var singleRow = 0; singleRow < allRows.length; singleRow++) {
-
-			 var rowCells = allRows[singleRow].split(',');
-				for (var rowCell = 0; rowCell < rowCells.length; rowCell++) {
-					if (rowCell == 0){
-						var table_row = []
-					}
-					table_row.push(rowCells[rowCell]);
-				}
-				table.push(table_row);
-
-	}
-	findRow(table); // calls function to find row to be sampled
-}
-
-function findRow(table){
-	var found = false;
-	for (var row = 1; row < table.length; row++){
-		var sampled = table[row][1];
-		if (found == false){
-			if (sampled == "0"){
-				var seq_filepath = table[row][0]; // selects sequence filepath that has not been sampled --> 0
-				var found = true;
-			}
-		}
-	}
-	var stim_seq = $.ajax({ // loads in stimulus sequence from server
-									url: seq_filepath,
-									dataType: 'json',
-									success: function (data) {
-										stim_seq = data;
-									},
-				});
-
-
-//var Stim = {"animals":["a1","a2","a3","a4","a5", "a6", "a7", "a8", "a9", "a10"],
-// "instruments":["i1","i2","i3","i4","i5", "i6", "i7", "i8", "i9", "i10"],
-//"tools":["t1","t2","t3","t4","t5", "t6", "t7", "t8", "t9", "t10"]};
-
-//var condsOrder = ["v", "v","a","a"];
-//var totalTrials = condsOrder.length;
-
-var vers = stim_seq[0][0]; // unique version number
-var set = stim_seq[1][0];
-var set = stim_seq[2][0];
-var modality = stim_seq[3]
-var prompt = stim_seq[4]
-var opt1 = stim_seq[5]
-var opt2 = stim_seq[6]
-
-var totalTrials = modality.length;
+var endExpTime, startExpTime, RT, key, fixTime, cond, stim_seq;
 
 // Load in pretest word options & practice trial stimuli
 var pretestStim = ["sunny", "ocean", "hello", "apple"];
@@ -113,10 +119,12 @@ var currTrial = 0;
 var audioFinish = 0;
 var endExpTime, startExpTime, cond;
 
+// Get totalTrials -- it's delayed because otherwise it will evaluate before
+
 // Ready function -- how it loads up at start
 $(document).ready(function(){
 
-  $("#landingButton").click(function(){showInstr()})
+  $("#landingButton").click(function(){runPretest()})
 
 });
 
@@ -248,7 +256,7 @@ function startTask(){
 	$("#endpracticePage").show()
 
 // Waits 1 sec then run real trials
-  sleep(1000).then(() => {
+  sleep(3000).then(() => {
 		$("#endpracticePage").hide();
 		$("#exptBox").show();
 		$("#promptBox").show();
@@ -272,14 +280,12 @@ function runTrial(){
 	$("#playOpt2").hide();
 
 	// select trial type
-	trialType = modality[trialNum];
-	trialStim = [prompt[trialNum], opt1[trialNum], opt2[trialNum]]
-
-	// select stimuli for this trial (one from each category)
-	//var categories = shuffle(Object.keys(Stim));
-	//c_cat = shuffle(Stim[categories[0]]);
-	//whichStim = uniqueRandoms(3, 0, 9); // select 3 of 9 in category at random
-	trialStim = [c_cat[whichStim[0]], c_cat[whichStim[1]], c_cat[whichStim[2]]];
+	currTrial = trials[0][trialNum+1]
+	console.log("trial: " + currTrial)
+	trialType = currTrial[4]
+	console.log("type: " + trialType)
+	trialStim = [currTrial[5],currTrial[6], currTrial[7]]
+	console.log("stim: " + trialStim)
 
 	// actually present the select stimuli
 	showStim(trialStim, trialType, 1); // 1 indicates it's not a practice trial
@@ -287,6 +293,8 @@ function runTrial(){
 
 
 function showStim(trialStim, trialType, practiceOrNot){
+
+	startTrialTime = new Date; // time at which the scene is presented for a given trial
 
 	$("#promptBox").show();
 	$("#option1Box").show();
@@ -312,10 +320,10 @@ function showStim(trialStim, trialType, practiceOrNot){
 
 		// Collect if audio has played or not
 		if (practiceOrNot == 0){
-			prompt.onended = function(){console.log("end prompt"); detectKeyPress();(audioFinish += 1); nextPractice()}
+			prompt.onended = function(){console.log("(P) end prompt"); nextPractice()}
 		}
 		else if (practiceOrNot == 1){
-			prompt.onended = function(){console.log("end prompt"); detectKeyPress();(audioFinish += 1); nextTrial()}
+			prompt.onended = function(){console.log("end prompt"); nextTrial()}
 		}
 	}
 
@@ -340,12 +348,12 @@ function showStim(trialStim, trialType, practiceOrNot){
   	$("#playOpt2").show();
 
 		if (practiceOrNot == 0){
-			opt1.onended = function(){console.log("end opt 1"); detectKeyPress(); nextPractice()}
-			opt2.onended = function(){console.log("end opt 2"); detectKeyPress(); nextPractice()}
+			opt1.onended = function(){console.log("(P) end opt 1");}
+			opt2.onended = function(){console.log("(P) end opt 2"); nextPractice()}
 		}
 		else if (practiceOrNot == 1){
-			opt1.onended = function(){console.log("end opt 1"); detectKeyPress(); nextTrial()}
-			opt2.onended = function(){console.log("end opt 2"); detectKeyPress(); nextTrial()}
+			opt1.onended = function(){console.log("end opt 1");}
+			opt2.onended = function(){console.log("end opt 2"); nextTrial()}
 		}
 
 	}
@@ -354,7 +362,7 @@ function showStim(trialStim, trialType, practiceOrNot){
 function nextPractice(){
 
 	// Run through practice trials then start real trials
-	if (pracNum < pracTotal+1){
+	if (pracNum < pracTotal){
 
 		$(document).keypress(function(){
 			pracNum++;
@@ -371,17 +379,22 @@ function nextPractice(){
 function nextTrial(){
 
 	// Keep running trials until you hit the total trian num
-	if (trialNum < totalTrials+1){
+	if (trialNum < totalTrials){
 
 		$(document).keypress(function(){
 			trialNum++;
 			$(document).unbind("keypress");
-			runTrial();
 
+			// Save dataType
 			endTrialTime = new Date;
 			RT = endTrialTime - startTrialTime;
-
 			saveTrialData();
+
+			// reset image (otherwise the last trial image will flash up while loading)
+			resetImgs()
+
+			// let everything
+			setTimeout(runTrial(), 1);
 		})
 
 	}
@@ -389,6 +402,14 @@ function nextTrial(){
 	else {
 	 endExpt()
  }
+}
+
+function resetImgs(){
+
+	$("#promptImg").attr("src","");
+	$("#opt1Img").attr("src","");
+	$("#opt2Img").attr("src","");
+
 }
 
 // Collect response
@@ -410,7 +431,7 @@ function detectKeyPress(){
 // ---------------------------
 //    FINISH UP + SAVE + SEND TO SERVER
 // ---------------------------
-// Show end instructions + score
+// Show end instructions
 function endExpt(){
 
   $("#exptBox").hide();
@@ -418,18 +439,10 @@ function endExpt(){
   $("#endPage").show();
 	$("#endPage").append("<br><p style='text-align:center'><strong>Your unique completion code is: </strong>" +subjID+"</p>");
 	$("#revealCodeButton").hide();
-
 	saveAllData();
 
 }
 
-// Save data
-function endExperiment(){
-	// gives participant their unique code and saves data to server --> this page should look identical to redirect html (revealCode.html)
-	$("#lastBlockInstructions").append("<br><p style='text-align:center'><strong>Your unique completion code is: </strong>" +subjID+"</p>");
-	$("#revealCodeButton").hide();
-	saveAllData();
-}
 
 // ---------------------
 // saving data functions
