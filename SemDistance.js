@@ -25,6 +25,8 @@ function pickRnd(data) {
     table.push(table_row);
   }
 
+  console.log(table)
+
   // selects a row
 	var found = false;
 		for (var row = 1; row < table.length; row++){
@@ -38,10 +40,9 @@ function pickRnd(data) {
 				 }
 			 }
 
- print(selected_row)
+ console.log(selected_row)
  //
  seq_filepath = ['randomizations/' + table[selected_row][0]].toString();
- print(seq_filepath)
 
  var seqCSV = $.ajax({
    url: seq_filepath,
@@ -68,8 +69,13 @@ function loadTrialSeq(seqCSV) {
 }}
 
 //setTimeout(function(){ totalTrials = trials.length; }, 1000);
+totalTrials = 20;
 
-totalTrials = 5;
+// Row of counterbalancing array to be sampled is stored in the url fragment (part after #)
+var url = window.location.href
+var url_split = url.split("#")
+var url_num = url_split[url_split.length - 1]
+console.log(url)
 
 // ---------------------------
 //    REST OF SET UP
@@ -115,16 +121,16 @@ var startTime = start.getHours() + "-" + start.getMinutes() + "-" + start.getSec
 var pracNum = 0;
 var pracTotal = 1;
 var trialNum = 0;
-var currTrial = 0;
-var audioFinish = 0;
 var endExpTime, startExpTime, cond;
-
-// Get totalTrials -- it's delayed because otherwise it will evaluate before
 
 // Ready function -- how it loads up at start
 $(document).ready(function(){
 
   $("#landingButton").click(function(){runPretest()})
+
+	document.getElementById("subjID").value = subjID;
+	document.getElementById("startDate").value = startDate;
+	document.getElementById("startTime").value = startTime;
 
 });
 
@@ -201,7 +207,6 @@ function showInstr(){
 // ---------------------------
 //    PRACTICE TRIALS
 // ---------------------------
-
 function runPractice(){
 
 	// Hide everything
@@ -219,15 +224,17 @@ function runPractice(){
 		trialType= "a";
 		trialStim=["typing", "printer_02s", "pen_11s"];
 	}
-	else {
+
+  if (pracNum == 1) {
 		trialType = "v"
 		trialStim=["bike_10s","car","train"];
 	};
 
-	// Actually show stimuli/practice tria
-	showStim(trialStim, trialType, 0); // 0 indicates it is a practice trial
-	console.log("practice " + pracNum)
-
+  if (pracNum < pracTotal+1){ // rerun next trial
+    showStim(trialStim, trialType, 0);} // 1 indicates it's not a practice trial
+  else { // start task
+    startTask()
+  }
 }
 
 // ---------------------------
@@ -256,7 +263,7 @@ function startTask(){
 	$("#endpracticePage").show()
 
 // Waits 1 sec then run real trials
-  sleep(3000).then(() => {
+  sleep(1000).then(() => {
 		$("#endpracticePage").hide();
 		$("#exptBox").show();
 		$("#promptBox").show();
@@ -287,12 +294,21 @@ function runTrial(){
 	trialStim = [currTrial[5],currTrial[6], currTrial[7]]
 	console.log("stim: " + trialStim)
 
+  $(document).unbind("keypress");
+
 	// actually present the select stimuli
-	showStim(trialStim, trialType, 1); // 1 indicates it's not a practice trial
+  if (trialNum < totalTrials+1){ // rerun next trial
+    showStim(trialStim, trialType, 1);} // 1 indicates it's not a practice trial
+  else { // show endPage
+      $("#exptBox").hide();
+      $(".expt").hide();
+      $("#endPage").show();
+      $("#revealCodeButton").show();
+  }
 };
 
-
 function showStim(trialStim, trialType, practiceOrNot){
+  $(document).unbind();
 
 	startTrialTime = new Date; // time at which the scene is presented for a given trial
 
@@ -319,12 +335,8 @@ function showStim(trialStim, trialType, practiceOrNot){
   	$("#opt2Img").show();
 
 		// Collect if audio has played or not
-		if (practiceOrNot == 0){
-			prompt.onended = function(){console.log("(P) end prompt"); nextPractice()}
-		}
-		else if (practiceOrNot == 1){
-			prompt.onended = function(){console.log("end prompt"); nextTrial()}
-		}
+		prompt.onended = function(){console.log("(P) end prompt"); detectKeyPress(practiceOrNot);}
+
 	}
 
 	else if (trialType = "v"){ // Run specifics for auditory prompt trials
@@ -347,61 +359,65 @@ function showStim(trialStim, trialType, practiceOrNot){
 		$("#playOpt1").show();
   	$("#playOpt2").show();
 
-		if (practiceOrNot == 0){
-			opt1.onended = function(){console.log("(P) end opt 1");}
-			opt2.onended = function(){console.log("(P) end opt 2"); nextPractice()}
-		}
-		else if (practiceOrNot == 1){
-			opt1.onended = function(){console.log("end opt 1");}
-			opt2.onended = function(){console.log("end opt 2"); nextTrial()}
-		}
+		//opt1.onended = function(){console.log("(P) end opt 1");}
+		opt2.onended = detectKeyPress(practiceOrNot);
 
 	}
 }
 
+// Collect responses
+function detectKeyPress(practiceOrNot){
+
+		$(document).keypress(function(event){
+      // if press c
+       if (event.which == 99){ //99 is js keycode for c
+				key = "c";
+				console.log(key);
+        if (practiceOrNot == 0) { nextPractice()}
+        else if (practiceOrNot == 1) { nextTrial()}
+			}
+
+			else if (event.which == 109){ //109 is js keycode for m
+				key = "m";
+				console.log(key);
+
+        $(document).unbind("keypress");
+
+        if (practiceOrNot == 0) { nextPractice()}
+        else if (practiceOrNot == 1) { nextTrial()}
+
+			}
+		});
+};
+
+
 function nextPractice(){
 
-	// Run through practice trials then start real trials
-	if (pracNum < pracTotal){
+  $(document).unbind("keypress");
 
-		$(document).keypress(function(){
-			pracNum++;
-			$(document).unbind("keypress");
-			runPractice();
-		})
-	}
+  // reset image (otherwise the last trial image will flash up while loading)
+  resetImgs()
 
-	else {
-	 startTask()
-	}
+	// Keep running trials until you hit the total trian num
+	pracNum++; // increase trial num
+  runPractice(); // rerun trial function
+
 }
 
 function nextTrial(){
 
+  $(document).unbind("keypress");
+  endTrialTime = new Date;
+  RT = endTrialTime - startTrialTime;
+  saveTrialData();
+
+  // reset image (otherwise the last trial image will flash up while loading)
+  resetImgs()
+
 	// Keep running trials until you hit the total trian num
-	if (trialNum < totalTrials){
+	trialNum++; // increase trial num
+  runTrial(); // rerun trial function
 
-		$(document).keypress(function(){
-			trialNum++;
-			$(document).unbind("keypress");
-
-			// Save dataType
-			endTrialTime = new Date;
-			RT = endTrialTime - startTrialTime;
-			saveTrialData();
-
-			// reset image (otherwise the last trial image will flash up while loading)
-			resetImgs()
-
-			// let everything
-			setTimeout(runTrial(), 1);
-		})
-
-	}
-
-	else {
-	 endExpt()
- }
 }
 
 function resetImgs(){
@@ -412,37 +428,17 @@ function resetImgs(){
 
 }
 
-// Collect response
-function detectKeyPress(){
-
-	// add event listener for keypress
-		$(document).bind("keypress", function(event){
-			if (event.which == 99){ //99 is js keycode for c
-				key = "c";
-				console.log(key);
-			}
-			else if (event.which == 109){ //109 is js keycode for m
-				key = "m";
-				console.log(key);
-			}
-		});
-};
-
 // ---------------------------
 //    FINISH UP + SAVE + SEND TO SERVER
 // ---------------------------
 // Show end instructions
 function endExpt(){
 
-  $("#exptBox").hide();
-  $(".expt").hide();
-  $("#endPage").show();
-	$("#endPage").append("<br><p style='text-align:center'><strong>Your unique completion code is: </strong>" +subjID+"</p>");
+	$("#endPage").append("<br><p style='text-align:left'><strong>Your unique completion code is: </strong>" +subjID+"</p>");
 	$("#revealCodeButton").hide();
 	saveAllData();
 
 }
-
 
 // ---------------------
 // saving data functions
@@ -502,7 +498,6 @@ function sendToServer() {
 		}
 	});
 }
-
 
 // ---------------------------
 //    USEFUL FUNCTIONS

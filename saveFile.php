@@ -7,7 +7,7 @@
 	header("Access-Control-Allow-Methods: PUT, POST, GET, OPTIONS, DELETE");
 
 	// set variables, either explicitly or post variables from form inputs
-	$experimentName = "SemDistance";
+	$experimentName = "semdist";
 	$versionName = "v1";
 	$dataURL = "/var/www/html/{$experimentName}/{$versionName}/data"; //this needs to be the location on the SERVER, not on the IP address
 	$startDate = $_POST["startDate"];
@@ -22,10 +22,10 @@
 
 	// format data for csv
 	$data = implode(",",$dataKeys)."\r\n"; //first row of csv, put commas between every csv header value and add newline at the end
-	for ($trial=0; $trial < $totalTrials; $trial++){ //number of rows
+	for ($trialNum=0; $trialNum < $totalTrials; $trialNum++){ //number of rows
 		$row = array(); //initialize new row to be added to final data
 		for ($header=0; $header < count($dataKeys); $header++){ //number of headers
-		    array_push($row, $dataDict[$dataKeys[$header]][$trial]); //add the $trial-th value of the $header-th header to this row
+		    array_push($row, $dataDict[$dataKeys[$header]][$trialNum]); //add the $trial-th value of the $header-th header to this row
 		}
 		$row = implode(",", $row); //put commas between all values in this row
 		$row = $row . "\r\n"; //add newline at the end of the row

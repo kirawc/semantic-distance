@@ -73,3 +73,11 @@ body {
 	text-align: center;
 
 }
+
+.buttonDiv {
+  width: 100px;
+  text-align: left;
+  padding: 5px;
+  margin: 0 auto;
+  display: none;
+}
