@@ -1,0 +1,159 @@
+,sub,set,split,modality,prompt,opt1,opt2
+0,77,10,6,w,cat,duck,rooster
+1,77,10,6,w,pig,cow,rooster
+2,77,10,6,w,bell,harp,trumpet
+3,77,10,6,w,dog,cat,duck
+4,77,10,6,w,harp,guitar,xylophone
+5,77,10,6,w,cuckoo clock,basketball,paper
+6,77,10,6,w,sheep,horse,songbird
+7,77,10,6,w,toilet,paper,phone
+8,77,10,6,w,ping pong,cuckoo clock,doorbell
+9,77,10,6,w,glass,basketball,phone
+10,77,10,6,w,glass,doorbell,ping pong
+11,77,10,6,w,drum,bell,harp
+12,77,10,6,w,duck,pig,songbird
+13,77,10,6,w,guitar,drum,flute
+14,77,10,6,w,tambourine,bell,harp
+15,77,10,6,w,xylophone,guitar,trumpet
+16,77,10,6,w,drum,bell,trumpet
+17,77,10,6,w,camera,paper,ping pong
+18,77,10,6,w,harp,tambourine,violin
+19,77,10,6,w,songbird,cat,cow
+20,77,10,6,w,basketball,phone,whistle
+21,77,10,6,w,violin,violin,xylophone
+22,77,10,6,w,glass,camera,ping pong
+23,77,10,6,w,camera,basketball,cuckoo clock
+24,77,10,6,w,whistle,paper,phone
+25,77,10,6,w,paper,ping pong,whistle
+26,77,10,6,w,songbird,duck,pig
+27,77,10,6,w,toilet,glass,whistle
+28,77,10,6,w,dog,cow,pig
+29,77,10,6,w,cuckoo clock,camera,toilet
+30,77,10,6,w,basketball,cuckoo clock,paper
+31,77,10,6,w,sheep,cat,cow
+32,77,10,6,w,rooster,dog,sheep
+33,77,10,6,w,duck,horse,sheep
+34,77,10,6,w,horse,cat,frog
+35,77,10,6,w,camera,phone,whistle
+36,77,10,6,w,paper,basketball,cuckoo clock
+37,77,10,6,w,violin,bell,drum
+38,77,10,6,w,paper,glass,phone
+39,77,10,6,w,rooster,pig,sheep
+40,77,10,6,w,sheep,cow,frog
+41,77,10,6,w,bell,drum,trumpet
+42,77,10,6,w,phone,toilet,whistle
+43,77,10,6,w,xylophone,drum,flute
+44,77,10,6,w,doorbell,cuckoo clock,phone
+45,77,10,6,w,violin,bell,tambourine
+46,77,10,6,w,sheep,duck,rooster
+47,77,10,6,w,bell,piano,violin
+48,77,10,6,w,ping pong,basketball,phone
+49,77,10,6,w,paper,glass,toilet
+50,77,10,6,w,paper,cuckoo clock,phone
+51,77,10,6,w,dog,pig,rooster
+52,77,10,6,w,doorbell,ping pong,toilet
+53,77,10,6,w,whistle,camera,phone
+54,77,10,6,w,guitar,tambourine,violin
+55,77,10,6,w,ping pong,toilet,whistle
+56,77,10,6,w,frog,cat,cow
+57,77,10,6,w,xylophone,guitar,violin
+58,77,10,6,w,piano,guitar,tambourine
+59,77,10,6,w,phone,doorbell,toilet
+60,77,10,6,w,cuckoo clock,camera,whistle
+61,77,10,6,w,guitar,flute,trumpet
+62,77,10,6,w,violin,flute,trumpet
+63,77,10,6,w,rooster,frog,sheep
+64,77,10,6,w,piano,bell,drum
+65,77,10,6,w,frog,rooster,sheep
+66,77,10,6,w,harp,piano,violin
+67,77,10,6,w,trumpet,flute,harp
+68,77,10,6,w,guitar,drum,tambourine
+69,77,10,6,w,pig,cow,songbird
+70,77,10,6,w,glass,paper,phone
+71,77,10,6,w,cow,sheep,songbird
+72,77,10,6,w,cuckoo clock,ping pong,toilet
+73,77,10,6,w,harp,trumpet,violin
+74,77,10,6,w,songbird,duck,rooster
+75,77,10,6,w,doorbell,cuckoo clock,whistle
+76,77,10,6,w,rooster,frog,songbird
+77,77,10,6,w,tambourine,drum,flute
+78,77,10,6,w,cat,pig,sheep
+79,77,10,6,w,frog,cow,horse
+80,77,10,6,w,cow,duck,songbird
+81,77,10,6,w,dog,cat,songbird
+82,77,10,6,w,bell,tambourine,xylophone
+83,77,10,6,w,basketball,cuckoo clock,whistle
+84,77,10,6,w,ping pong,phone,toilet
+85,77,10,6,w,songbird,cow,sheep
+86,77,10,6,w,trumpet,guitar,piano
+87,77,10,6,w,sheep,frog,pig
+88,77,10,6,w,doorbell,basketball,glass
+89,77,10,6,w,cat,cow,dog
+90,77,10,6,w,trumpet,bell,harp
+91,77,10,6,w,doorbell,doorbell,phone
+92,77,10,6,w,bell,guitar,harp
+93,77,10,6,w,piano,harp,violin
+94,77,10,6,w,toilet,cuckoo clock,glass
+95,77,10,6,w,ping pong,paper,phone
+96,77,10,6,w,glass,toilet,whistle
+97,77,10,6,w,pig,cow,horse
+98,77,10,6,w,doorbell,basketball,paper
+99,77,10,6,w,tambourine,flute,guitar
+100,77,10,6,w,rooster,duck,rooster
+101,77,10,6,w,pig,horse,sheep
+102,77,10,6,w,guitar,drum,harp
+103,77,10,6,w,pig,rooster,sheep
+104,77,10,6,w,horse,cat,cow
+105,77,10,6,w,pig,rooster,songbird
+106,77,10,6,w,piano,tambourine,trumpet
+107,77,10,6,w,trumpet,bell,xylophone
+108,77,10,6,w,bell,drum,flute
+109,77,10,6,w,camera,cuckoo clock,toilet
+110,77,10,6,w,whistle,phone,toilet
+111,77,10,6,w,cow,dog,sheep
+112,77,10,6,w,toilet,camera,ping pong
+113,77,10,6,w,frog,cow,duck
+114,77,10,6,w,cat,rooster,songbird
+115,77,10,6,w,drum,guitar,violin
+116,77,10,6,w,flute,bell,guitar
+117,77,10,6,w,xylophone,harp,tambourine
+118,77,10,6,w,cow,cat,songbird
+119,77,10,6,w,basketball,camera,glass
+120,77,10,6,w,drum,flute,piano
+121,77,10,6,w,xylophone,harp,piano
+122,77,10,6,w,piano,flute,violin
+123,77,10,6,w,flute,tambourine,trumpet
+124,77,10,6,w,duck,cat,pig
+125,77,10,6,w,duck,frog,rooster
+126,77,10,6,w,flute,bell,tambourine
+127,77,10,6,w,toilet,basketball,cuckoo clock
+128,77,10,6,w,cat,horse,songbird
+129,77,10,6,w,violin,drum,guitar
+130,77,10,6,w,sheep,rooster,songbird
+131,77,10,6,w,harp,flute,tambourine
+132,77,10,6,w,camera,phone,ping pong
+133,77,10,6,w,duck,cat,rooster
+134,77,10,6,w,cuckoo clock,paper,toilet
+135,77,10,6,w,guitar,bell,xylophone
+136,77,10,6,w,cow,dog,rooster
+137,77,10,6,w,phone,doorbell,paper
+138,77,10,6,w,songbird,dog,rooster
+139,77,10,6,w,dog,frog,songbird
+140,77,10,6,w,drum,trumpet,xylophone
+141,77,10,6,w,trumpet,bell,guitar
+142,77,10,6,w,tambourine,harp,violin
+143,77,10,6,w,phone,basketball,whistle
+144,77,10,6,w,whistle,basketball,whistle
+145,77,10,6,w,whistle,cuckoo clock,ping pong
+146,77,10,6,w,basketball,paper,toilet
+147,77,10,6,w,horse,cat,sheep
+148,77,10,6,w,frog,dog,duck
+149,77,10,6,w,cuckoo clock,doorbell,phone
+150,77,10,6,w,xylophone,harp,trumpet
+151,77,10,6,w,horse,duck,rooster
+152,77,10,6,w,horse,duck,frog
+153,77,10,6,w,paper,cuckoo clock,glass
+154,77,10,6,w,tambourine,bell,trumpet
+155,77,10,6,w,flute,harp,violin
+156,77,10,6,w,phone,doorbell,ping pong
+157,77,10,6,w,flute,bell,drum

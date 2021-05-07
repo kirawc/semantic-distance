@@ -1,0 +1,160 @@
+,sub,set,split,modality,prompt,opt1,opt2
+0,87,12,2,w,harp,drum,flute
+1,87,12,2,w,drum,harp,piano
+2,87,12,2,w,cuckoo clock,paper,whistle
+3,87,12,2,w,cat,dog,pig
+4,87,12,2,w,paper,basketball,glass
+5,87,12,2,w,frog,horse,pig
+6,87,12,2,w,trumpet,bell,violin
+7,87,12,2,w,camera,basketball,toilet
+8,87,12,2,w,cuckoo clock,doorbell,glass
+9,87,12,2,w,tambourine,bell,flute
+10,87,12,2,w,flute,guitar,trumpet
+11,87,12,2,w,violin,tambourine,xylophone
+12,87,12,2,w,ping pong,cuckoo clock,glass
+13,87,12,2,w,tambourine,bell,drum
+14,87,12,2,w,cow,dog,songbird
+15,87,12,2,w,duck,dog,frog
+16,87,12,2,w,doorbell,glass,paper
+17,87,12,2,w,xylophone,bell,trumpet
+18,87,12,2,w,bell,drum,piano
+19,87,12,2,w,dog,cow,frog
+20,87,12,2,w,paper,glass,ping pong
+21,87,12,2,w,toilet,camera,glass
+22,87,12,2,w,paper,camera,toilet
+23,87,12,2,w,sheep,horse,pig
+24,87,12,2,w,drum,tambourine,trumpet
+25,87,12,2,w,sheep,dog,pig
+26,87,12,2,w,songbird,horse,sheep
+27,87,12,2,w,frog,horse,rooster
+28,87,12,2,w,cuckoo clock,doorbell,ping pong
+29,87,12,2,w,frog,cow,songbird
+30,87,12,2,w,dog,frog,pig
+31,87,12,2,w,xylophone,bell,piano
+32,87,12,2,w,toilet,glass,ping pong
+33,87,12,2,w,horse,frog,rooster
+34,87,12,2,w,bell,flute,violin
+35,87,12,2,w,cat,pig,songbird
+36,87,12,2,w,violin,guitar,harp
+37,87,12,2,w,whistle,cuckoo clock,paper
+38,87,12,2,w,doorbell,paper,whistle
+39,87,12,2,w,cow,cat,sheep
+40,87,12,2,w,guitar,drum,piano
+41,87,12,2,w,guitar,bell,violin
+42,87,12,2,w,pig,duck,songbird
+43,87,12,2,w,horse,cat,pig
+44,87,12,2,w,songbird,cow,frog
+45,87,12,2,w,whistle,camera,glass
+46,87,12,2,w,dog,cow,horse
+47,87,12,2,w,phone,cuckoo clock,toilet
+48,87,12,2,w,trumpet,bell,drum
+49,87,12,2,w,toilet,cuckoo clock,whistle
+50,87,12,2,w,horse,dog,sheep
+51,87,12,2,w,frog,horse,sheep
+52,87,12,2,w,piano,guitar,harp
+53,87,12,2,w,xylophone,guitar,tambourine
+54,87,12,2,w,cat,frog,rooster
+55,87,12,2,w,songbird,cat,sheep
+56,87,12,2,w,ping pong,doorbell,whistle
+57,87,12,2,w,pig,dog,sheep
+58,87,12,2,w,pig,cat,songbird
+59,87,12,2,w,drum,bell,xylophone
+60,87,12,2,w,trumpet,piano,tambourine
+61,87,12,2,w,trumpet,harp,xylophone
+62,87,12,2,w,duck,cow,pig
+63,87,12,2,w,sheep,cat,duck
+64,87,12,2,w,songbird,cat,pig
+65,87,12,2,w,bell,drum,violin
+66,87,12,2,w,rooster,cow,dog
+67,87,12,2,w,violin,guitar,piano
+68,87,12,2,w,sheep,pig,songbird
+69,87,12,2,w,camera,toilet,whistle
+70,87,12,2,w,basketball,paper,phone
+71,87,12,2,w,doorbell,camera,cuckoo clock
+72,87,12,2,w,whistle,camera,doorbell
+73,87,12,2,w,camera,cuckoo clock,doorbell
+74,87,12,2,w,harp,piano,trumpet
+75,87,12,2,w,violin,drum,trumpet
+76,87,12,2,w,phone,camera,whistle
+77,87,12,2,w,violin,bell,guitar
+78,87,12,2,w,ping pong,basketball,doorbell
+79,87,12,2,w,doorbell,basketball,phone
+80,87,12,2,w,glass,cuckoo clock,toilet
+81,87,12,2,w,flute,violin,xylophone
+82,87,12,2,w,dog,rooster,sheep
+83,87,12,2,w,paper,phone,toilet
+84,87,12,2,w,dog,duck,frog
+85,87,12,2,w,bell,guitar,tambourine
+86,87,12,2,w,guitar,piano,tambourine
+87,87,12,2,w,tambourine,flute,tambourine
+88,87,12,2,w,glass,phone,whistle
+89,87,12,2,w,drum,flute,tambourine
+90,87,12,2,w,doorbell,camera,phone
+91,87,12,2,w,songbird,cat,dog
+92,87,12,2,w,xylophone,bell,guitar
+93,87,12,2,w,whistle,basketball,doorbell
+94,87,12,2,w,guitar,bell,trumpet
+95,87,12,2,w,camera,cuckoo clock,phone
+96,87,12,2,w,toilet,camera,whistle
+97,87,12,2,w,piano,tambourine,xylophone
+98,87,12,2,w,tambourine,drum,trumpet
+99,87,12,2,w,bell,flute,trumpet
+100,87,12,2,w,ping pong,camera,glass
+101,87,12,2,w,glass,cuckoo clock,paper
+102,87,12,2,w,flute,drum,harp
+103,87,12,2,w,phone,ping pong,whistle
+104,87,12,2,w,sheep,duck,horse
+105,87,12,2,w,whistle,basketball,camera
+106,87,12,2,w,piano,piano,violin
+107,87,12,2,w,frog,duck,horse
+108,87,12,2,w,horse,cat,rooster
+109,87,12,2,w,camera,basketball,glass
+110,87,12,2,w,glass,doorbell,whistle
+111,87,12,2,w,rooster,cat,dog
+112,87,12,2,w,rooster,dog,horse
+113,87,12,2,w,ping pong,basketball,ping pong
+114,87,12,2,w,cuckoo clock,basketball,phone
+115,87,12,2,w,duck,cat,frog
+116,87,12,2,w,duck,cow,dog
+117,87,12,2,w,basketball,cuckoo clock,ping pong
+118,87,12,2,w,dog,cat,horse
+119,87,12,2,w,cuckoo clock,paper,phone
+120,87,12,2,w,basketball,doorbell,ping pong
+121,87,12,2,w,phone,doorbell,whistle
+122,87,12,2,w,paper,cuckoo clock,ping pong
+123,87,12,2,w,cow,rooster,sheep
+124,87,12,2,w,violin,drum,harp
+125,87,12,2,w,drum,bell,guitar
+126,87,12,2,w,cat,frog,horse
+127,87,12,2,w,flute,guitar,piano
+128,87,12,2,w,ping pong,glass,phone
+129,87,12,2,w,piano,drum,trumpet
+130,87,12,2,w,horse,pig,songbird
+131,87,12,2,w,glass,phone,ping pong
+132,87,12,2,w,songbird,cow,duck
+133,87,12,2,w,guitar,trumpet,xylophone
+134,87,12,2,w,toilet,doorbell,phone
+135,87,12,2,w,harp,drum,xylophone
+136,87,12,2,w,piano,guitar,xylophone
+137,87,12,2,w,harp,drum,violin
+138,87,12,2,w,basketball,camera,ping pong
+139,87,12,2,w,xylophone,drum,violin
+140,87,12,2,w,flute,drum,tambourine
+141,87,12,2,w,duck,cow,sheep
+142,87,12,2,w,glass,doorbell,phone
+143,87,12,2,w,tambourine,violin,xylophone
+144,87,12,2,w,trumpet,flute,xylophone
+145,87,12,2,w,toilet,phone,ping pong
+146,87,12,2,w,cat,horse,pig
+147,87,12,2,w,harp,flute,guitar
+148,87,12,2,w,pig,frog,songbird
+149,87,12,2,w,flute,drum,trumpet
+150,87,12,2,w,piano,drum,xylophone
+151,87,12,2,w,basketball,camera,phone
+152,87,12,2,w,rooster,dog,pig
+153,87,12,2,w,frog,pig,rooster
+154,87,12,2,w,cow,rooster,songbird
+155,87,12,2,w,rooster,duck,sheep
+156,87,12,2,w,pig,sheep,songbird
+157,87,12,2,w,cow,duck,sheep
+158,87,12,2,w,phone,camera,doorbell

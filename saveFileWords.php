@@ -8,7 +8,7 @@
 
 	// set variables, either explicitly or post variables from form inputs
 	$experimentName = "semdist";
-	$versionName = "v1";
+	$versionName = "v2words";
 	$dataURL = "/var/www/html/{$experimentName}/{$versionName}/data/"; //this needs to be the location on the SERVER, not on the IP address
 	$startDate = $_POST["startDate"];
 	$startTime = $_POST["startTime"];
@@ -42,5 +42,5 @@
 	fclose($fcon);
 
 	// reroute on form submit instead of refresh
-	header("Location: revealCode.html?code=".$subjID); //any variables to pass to new html should exist after a ? at the end of the re-route url
+	header("Location: revealCodeWords.html?code=".$subjID); //any variables to pass to new html should exist after a ? at the end of the re-route url
 ?>

@@ -3,12 +3,12 @@
   <head>
     <!-- Load in jquery library & link to css + js -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <link rel="stylesheet" href="SemDistance.css">
-    <script src="SemDistance.js"></script>
+    <link rel="stylesheet" href="SemDistWords.css">
+    <script src="SemDistWords.js"></script>
     <link rel="shortcut icon" href="#">
 
     <!-- This calls the php function, and on submit, the page refreshes (unless otherwise specified in php) -->
-    <form name="saveData" id="saveData" action="saveFile.php" method="post">
+    <form name="saveData" id="saveData" action="saveFileWords.php" method="post">
       <!-- Any variables you want to pass to the php have to be here -->
       <input type="hidden" name="experimentData" id="experimentData"> <!-- this value should be your data array after JSON.stringify(data)  -->
       <input type="hidden" name="subjID" id="subjID" value="test">
@@ -25,58 +25,16 @@
     <div id="landingPage" class="instructions">
       Welcome!
       <br><br>
-      In the following task, you will look at pictures of objects and listen to short sounds and make similarity judgements.
+      In the following task, you will see words and make similarity judgements.
       <br><br>
-      It will last approximately 30 minutes.
-      <br><br>
-      You must be able to hear audio on your device to complete this task.
-      <br><br>
-      Further instructions will be provided after the audio test.
-      <br><br>
+      It will last approximately 15 minutes. <br><br>
       <button id="landingButton" class="button"> Click to continue </button>
-    </div>
-
-    <!-- audio test -->
-    <div id="preTest" class="instructions">
-      Adjust your volume to a comfortable level. Listen to the recording.
-      <br><br>
-      What word does the audio say? <br><br>
-      <audio id="testsound" src="stimuli/hello.mp3" controls=true> </audio><br><br>
-
-      <!-- buttons -->
-      <button id= "hello" class = "wrong" class="audiotest"> HELLO </button>
-      <button id= "apple" class = "wrong" class="audiotest"> APPLE </button>
-      <button id= "sunny" class = "wrong" class="audiotest"> SUNNY </button>
-      <button id= "ocean" class = "wrong" class="audiotest"> OCEAN </button>
-
-      <!-- if correct answer, start task button -->
-      <button id="taskButton" class="button"> Correct! You're eligible. Click to continue. </button>
-
-      <!-- if wrong answer, end task -->
-      <div id="failedpretask" class="instructions">
-      Sorry, you aren't eligible for this task.
       <br>
-      Please close this screen and return the HIT.  </div>
-
-    </div>
-
-    <!-- stimulus familiarzation -->
-    <div id="famBox">
-      <div id ="famInstr">
-        In a moment, you will see images and hear sounds. <br><br>
-        Pay attention to each one. <br><br>
-        No response is required at this time. </div>
-        <br><br>
-      <center>
-      <img id="famImg" src="" height=200></img>
-      </center>
     </div>
 
     <!-- task instructions -->
     <div id="taskExpl" class="instructions">
-      For each trial, you will see a prompt with a gray border and two options.
-      <br><br>
-      Listen to each sound fully and look at all pictures.
+      For each trial, you will see a prompt word in bold and two options words in italics.
       <br><br>
       Select the option <u><b>most similar</u></b> to the prompt.
       <ul>
@@ -87,7 +45,7 @@
       <br><br>
        If neither option seems similar, select the more similar option (e.g., an apple is more similar to a knife than car)
        <br><br>
-      If an option matches the prompt exactly (e.g., a cat & a meow), select that option. Accuracy will be checked and low accuracy HITs will not be approved.
+      If an option matches the prompt exactly (e.g., cat & cat), select that option. Accuracy will be checked.
       <br><br>
       You will see 2 practice trials and then the task will start.
       <br><br><br>
@@ -112,26 +70,29 @@
     <!-- experiment box -->
     <div id="exptBox" class="expt">
 
+      <div id="progress">
+        <div id="progressbar"></div>
+      </div>
+
+      <br><br>
+
       <div id = "promptBox" class="expt">
         Which option is most similar to the prompt? <br><br><br>
-        <img id="promptImg" src="" class = "noborder" class="expt" height=200></img>
-        <button id = "playPrompt" class="button" class = "noborder" class="expt" > ♫  PLAY PROMPT </button>
-        <br>
+        <div id="promptWord" class="word"></div>
       </div>
 
       <div id = "option1Box" class="expt">
-        <img id="opt1Img" src="" class="expt" height=200></img>
-        <button id = "playOpt1" class="button" class="expt" > ♫ PLAY OPTION 1 </button>
+        <div id="opt1Word" class="word"></div>
         <br><br>
          ← left
       </div>
 
       <div id = "option2Box" class="expt">
-        <img id="opt2Img" src="" class="expt" height=200></img>
-        <button id = "playOpt2" class="button" class="expt" > ♫ PLAY OPTION 2 </button>
+        <div id="opt2Word" class="word"></div>
         <br><br>
         right →
       </div>
+
     </div>
   </body
 

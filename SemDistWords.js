@@ -8,7 +8,7 @@ var url_num = url_split[url_split.length - 1]
 
 // Create data structure for save files (cols = vars below; rows = trial)
 var data = $.ajax({
-  url: 'randomizations/summary.csv',
+  url: 'summaryWORDS.csv',
   dataType: 'text',
 }).done(pickRnd);
 
@@ -41,7 +41,7 @@ function pickRnd(data) {
  selected_row = url_num;
 
  //
- seq_filepath = ['randomizations/' + table[selected_row][0]].toString();
+ seq_filepath = ['randomizWords/' + table[selected_row][0]].toString();
 
  var seqCSV = $.ajax({
    url: seq_filepath,
@@ -120,135 +120,16 @@ var pracNum = 0;
 var pracTotal = 1;
 var trialNum = 0;
 
-// Define stimuli
-stimList = ["a1","a2","a3","a4","a5","a6","a7","a8","a9","a10",
-"i1","i2","i3","i4","i5","i6","i7","i8","i9","i10",
-"h1","h2","h3","h4","h5","h6","h7","h8","h9","h10"];
-
 // Ready function -- how it loads up at start
 $(document).ready(function(){
 
-  preloadStimuli()
-  $("#landingButton").click(function(){runPretest()})
+  $("#landingButton").click(function(){showInstr()})
 
 	document.getElementById("subjID").value = subjID;
 	document.getElementById("startDate").value = startDate;
 	document.getElementById("startTime").value = startTime;
 
 });
-
-// ---------------------------
-//    PRELOAD STIMULI
-// ---------------------------
-function preloadStimuli(){
-
-  // preload practice
-  pracList =["typing", "printer_02s", "pen_11s", "bike_10s", "car", "train"];
-  var cPracLoad;
-
-  for (cPracLoad=0; cPreload < pracList.length; cPracLoad++){
-      var img = document.createElement("img");
-      img.src = "stimuli/" + stimList[cPracLoad] + ".jpg";
-      document.getElementById("preload").appendChild(img);}
-
-  // preload actual images
-  var cPreload;
-
-  for (cPreload=0; cPreload < stimList.length; cPreload++){
-			var img = document.createElement("img");
-			img.src = "stimuli/" + stimList[cPreload] + ".jpg";
-			document.getElementById("preload").appendChild(img);}
-
-}
-
-// ---------------------------
-//    TEST AUDIO
-// ---------------------------
-
-// Run audio pretest -- currently skipped because I put it in the mturk instead but leaving func in
-function runPretest(){
-
-	$("#landingPage").hide();
-  $("#taskButton").hide();
-
-	// Select word & change pretest audio to that recording
-	curr_word = pretestStim[getRandomInt(3)];
-	$("#testsound").attr("src", "stimuli/" + curr_word + ".mp3")
-
-	// For the selected word, change associated button to "correct"
-	$("#" + curr_word).addClass("corr").removeClass("wrong")
-
-	// Show pretest div (audio + sounds)
-  $("#preTest").show();
-
-	// If button labeled correct is click, show task button
-	$(".corr").click(function(){
-		$("#taskButton").show()
-		$(".corr").hide()
-		$(".wrong").hide()
-	});
-
-  // If any button labeled wrong correct, show "not eligible" message
-	$(".wrong").click(function(){
-		$("#failedpretask").show()
-		$(".corr").hide()
-		$(".wrong").hide()
-	});
-
-	// When the task button is clicked, show instr
-  $("#taskButton").click(function(){familiarizeStim()})
-
-}
-
-
-// ---------------------------
-//    FAMILIARIZATION STAGE
-// ---------------------------
-
-// Show each sound & image once
-function familiarizeStim(){
-
-  // Get list
-  shuffleList = shuffle(stimList);
-
-  // Hide previous
-  $("#landingPage").hide();
-  $("#preTest").hide();
-
-  // Show current familiarzation div
-  $("#famBox").show()
-  $("#famInstr").show()
-  $("#famImg").show()
-
-  //
-  stimIndex = 0;
-
-  //showPair(shuffleList);
-
-  if (stimIndex < shuffleList.length){
-    showAll= setInterval(function(){stimIndex++; showPair(shuffleList)}, 1300)}
-  else {
-    showInstr()
-    clearInterval(showAll)
-  }
-
-}
-
-function showPair(lst){
-
-  //console.log(stimIndex)
-
-  if (stimIndex < lst.length){
-    $("#famImg").attr("src","stimuli/" + lst[stimIndex] + ".jpg");
-    famAud = new Audio("stimuli/" + lst[stimIndex] + ".mp3");
-    famAud.play();
-  }
-  else {
-    clearInterval(showAll);
-    showInstr()
-  }
-
-}
 
 // ---------------------------
 //    INSTRUCTIONS
@@ -258,6 +139,9 @@ function showPair(lst){
 function showInstr(){
 
 	// Hide previous
+  $("#landingPage").hide();
+  $("#taskButton").hide();
+  $("#preTest").hide();
   $("#famBox").hide()
   $("#famInstr").hide()
   $("#famImg").hide()
@@ -286,25 +170,15 @@ function showInstr(){
 // ---------------------------
 function runPractice(){
 
-	// Hide everything
-	// (images)
-	$("#promptImg").hide();
-	$("#opt1Img").hide();
-	$("#opt2Img").hide();
-	// (buttons)
-	$("#playPrompt").hide();
-	$("#playOpt1").hide();
-	$("#playOpt2").hide();
-
 	// Assign trial stimuli & type (always same for 1st & 2nd)
 	if (pracNum == 0){
-		trialType= "a";
-		trialStim=["typing", "printer_02s", "pen_11s"];
+		trialType= "w";
+		trialStim=["car", "motorcycle", "boat"];
 	}
 
   if (pracNum == 1) {
-		trialType = "v"
-		trialStim=["bike_10s","car","train"];
+		trialType = "w"
+		trialStim=["daisy","cactus","rose"];
 	};
 
   if (pracNum < pracTotal+1){ // rerun next trial
@@ -327,14 +201,6 @@ function startTask(){
 	$("#promptBox").hide();
 	$("option1Box").hide();
 	$("option2Box").hide();
-	// (images)
-	$("#promptImg").hide();
-	$("#opt1Img").hide();
-	$("#opt2Img").hide();
-	// (buttons)
-	$("#playPrompt").hide();
-	$("#playOpt1").hide();
-	$("#playOpt2").hide();
 
 	// Show end of practice message
 	$("#endpracticePage").show()
@@ -346,6 +212,7 @@ function startTask(){
 		$("#promptBox").show();
 		$("#option1Box").show();
 		$("#option2Box").show();
+    $("#progress").show()
 
 		runTrial(); });
 }
@@ -356,12 +223,9 @@ function runTrial(){
 	console.log("trial " + trialNum);
 
 	// hide everything inside divs at the start of each new trial
-	$("#opt1Img").hide();
-	$("#opt2Img").hide();
-	$("#promptImg").hide();
-	$("#playPrompt").hide();
-	$("#playOpt1").hide();
-	$("#playOpt2").hide();
+	$("#opt1Word").hide();
+	$("#opt2Word").hide();
+	$("#promptWord").hide();
 
 	// select trial type
 	currTrial = trials[0][trialNum+1]
@@ -394,55 +258,22 @@ function showStim(trialStim, trialType, practiceOrNot){
 	$("#option1Box").show();
 	$("#option2Box").show();
 
-	if (trialType == "a"){ // Run specific for auditory prompt trials
+  $("#opt1Word").show();
+  $("#opt2Word").show();
+  $("#promptWord").show();
 
-  // Change image file sources
+	if (trialType == "w"){ // Run specific for auditory prompt trials
+
+  // Append
 	//$("#promptAud").attr("src", "stimuli/" + trialStim[0] + ".mp3")
-	prompt = new Audio("stimuli/" + trialStim[0] + ".mp3")
-	$("#opt1Img").attr("src","stimuli/" + trialStim[1] + ".jpg");
-  $("#opt2Img").attr("src","stimuli/" + trialStim[2] + ".jpg");
-  setTimeout(function(){$("#playPrompt").removeClass("noborder").addClass("border")},200)
+  $("#promptWord").append(trialStim[0])
+  $("#opt1Word").append(trialStim[1])
+  $("#opt2Word").append(trialStim[2])
 
-		// Change audio file sources + set up on click
-		$("#playPrompt").click(function(){
-			prompt.play();
-		});
-
-  // Show button & images
-		$("#playPrompt").show()
-		$("#opt1Img").show();
-  	$("#opt2Img").show();
-
-		// Collect if audio has played or not
-		prompt.onended = function(){detectKeyPress(practiceOrNot);}
+  setTimeout(function(){ detectKeyPress(practiceOrNot)},500);
 
 	}
 
-	else if (trialType = "v"){ // Run specifics for auditory prompt trials
-		// Change file sources
-		$("#promptImg").attr("src","stimuli/" + trialStim[0] + ".jpg");
-    setTimeout(function(){$("#promptImg").removeClass("noborder").addClass("border")},200)
-		opt1 = new Audio("stimuli/" + trialStim[1] + ".mp3")
-		opt2 = new Audio("stimuli/" + trialStim[2] + ".mp3")
-
-		// Set up audio buttons
-		$("#playOpt1").click(function(){
-			opt1.play();
-		});
-
-		$("#playOpt2").click(function(){
-			opt2.play();
-		});
-
-		// Show button & images
-		$("#promptImg").show()
-		$("#playOpt1").show();
-  	$("#playOpt2").show();
-
-    // Collect if audio has played or not
-    opt2.onended = function(){detectKeyPress(practiceOrNot);}
-
-	}
 }
 
 // Collect responses
@@ -493,6 +324,7 @@ function nextTrial(){
 
   // reset image (otherwise the last trial image will flash up while loading)
   resetImgs()
+  updateProgress()
 
 	// Keep running trials until you hit the total trian num
 	trialNum++; // increase trial num
@@ -502,11 +334,21 @@ function nextTrial(){
 
 function resetImgs(){
 
-	$("#promptImg").attr("src","");
-	$("#opt1Img").attr("src","");
-	$("#opt2Img").attr("src","");
-  $("#promptImg").removeClass("border").addClass("noborder")
-  $("#playPrompt").removeClass("border").addClass("noborder")
+  $("#promptWord").empty()
+  $("#opt1Word").empty()
+  $("#opt2Word").empty()
+
+}
+
+function updateProgress() {
+  var element = document.getElementById("progressbar");
+
+  if (trialNum == 0){
+    width = 1;
+    element.style.width = width + '%';}
+  else {
+    width = width + ((1/totalTrials)*100);
+    element.style.width = width + '%';}
 
 }
 
@@ -532,7 +374,7 @@ function saveTrialData(trialStim, trialType){
 	// global variables --> will be repetitive, same value for every row (each row will represent one trial)
 	thisData["subjID"].push(subjID);
 	thisData["experimentName"].push("sem-dist");
-	thisData["versionName"].push("v1");
+	thisData["versionName"].push("v2words");
 	thisData["windowWidth"].push($(window).width());
 	thisData["windowHeight"].push($(window).height());
 	thisData["screenWidth"].push(screen.width);

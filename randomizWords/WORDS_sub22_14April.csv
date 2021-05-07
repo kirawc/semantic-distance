@@ -1,0 +1,160 @@
+,sub,set,split,modality,prompt,opt1,opt2
+0,22,3,0,w,trumpet,bell,piano
+1,22,3,0,w,cat,frog,pig
+2,22,3,0,w,pig,frog,horse
+3,22,3,0,w,camera,glass,toilet
+4,22,3,0,w,piano,bell,guitar
+5,22,3,0,w,phone,paper,ping pong
+6,22,3,0,w,toilet,doorbell,ping pong
+7,22,3,0,w,trumpet,guitar,tambourine
+8,22,3,0,w,drum,guitar,piano
+9,22,3,0,w,harp,piano,tambourine
+10,22,3,0,w,xylophone,drum,tambourine
+11,22,3,0,w,paper,glass,whistle
+12,22,3,0,w,paper,phone,ping pong
+13,22,3,0,w,cow,frog,sheep
+14,22,3,0,w,pig,cat,dog
+15,22,3,0,w,paper,doorbell,whistle
+16,22,3,0,w,rooster,cat,frog
+17,22,3,0,w,horse,rooster,songbird
+18,22,3,0,w,songbird,cat,frog
+19,22,3,0,w,flute,harp,tambourine
+20,22,3,0,w,duck,frog,songbird
+21,22,3,0,w,glass,camera,phone
+22,22,3,0,w,paper,camera,doorbell
+23,22,3,0,w,camera,cuckoo clock,paper
+24,22,3,0,w,horse,duck,sheep
+25,22,3,0,w,songbird,cat,horse
+26,22,3,0,w,tambourine,bell,piano
+27,22,3,0,w,violin,drum,flute
+28,22,3,0,w,ping pong,camera,cuckoo clock
+29,22,3,0,w,paper,doorbell,phone
+30,22,3,0,w,pig,dog,pig
+31,22,3,0,w,sheep,cat,horse
+32,22,3,0,w,piano,bell,xylophone
+33,22,3,0,w,horse,frog,pig
+34,22,3,0,w,songbird,frog,sheep
+35,22,3,0,w,xylophone,flute,piano
+36,22,3,0,w,camera,doorbell,whistle
+37,22,3,0,w,whistle,doorbell,glass
+38,22,3,0,w,toilet,doorbell,whistle
+39,22,3,0,w,tambourine,piano,xylophone
+40,22,3,0,w,doorbell,paper,phone
+41,22,3,0,w,frog,cat,horse
+42,22,3,0,w,glass,paper,ping pong
+43,22,3,0,w,flute,trumpet,violin
+44,22,3,0,w,phone,doorbell,glass
+45,22,3,0,w,cow,duck,pig
+46,22,3,0,w,ping pong,basketball,whistle
+47,22,3,0,w,bell,drum,harp
+48,22,3,0,w,violin,bell,xylophone
+49,22,3,0,w,harp,flute,xylophone
+50,22,3,0,w,trumpet,violin,xylophone
+51,22,3,0,w,drum,harp,violin
+52,22,3,0,w,whistle,camera,ping pong
+53,22,3,0,w,frog,cat,dog
+54,22,3,0,w,dog,cow,sheep
+55,22,3,0,w,dog,cat,frog
+56,22,3,0,w,duck,horse,rooster
+57,22,3,0,w,sheep,cow,duck
+58,22,3,0,w,pig,frog,rooster
+59,22,3,0,w,phone,phone,toilet
+60,22,3,0,w,basketball,camera,toilet
+61,22,3,0,w,cuckoo clock,basketball,ping pong
+62,22,3,0,w,basketball,cuckoo clock,phone
+63,22,3,0,w,harp,drum,trumpet
+64,22,3,0,w,sheep,cat,dog
+65,22,3,0,w,tambourine,flute,piano
+66,22,3,0,w,camera,glass,ping pong
+67,22,3,0,w,doorbell,glass,whistle
+68,22,3,0,w,sheep,cow,rooster
+69,22,3,0,w,cuckoo clock,basketball,whistle
+70,22,3,0,w,songbird,dog,duck
+71,22,3,0,w,ping pong,glass,paper
+72,22,3,0,w,piano,harp,tambourine
+73,22,3,0,w,camera,basketball,doorbell
+74,22,3,0,w,trumpet,bell,flute
+75,22,3,0,w,dog,pig,sheep
+76,22,3,0,w,whistle,camera,cuckoo clock
+77,22,3,0,w,cat,dog,songbird
+78,22,3,0,w,xylophone,tambourine,violin
+79,22,3,0,w,songbird,cow,horse
+80,22,3,0,w,frog,dog,pig
+81,22,3,0,w,cow,dog,frog
+82,22,3,0,w,phone,basketball,camera
+83,22,3,0,w,cat,rooster,sheep
+84,22,3,0,w,basketball,glass,ping pong
+85,22,3,0,w,drum,bell,piano
+86,22,3,0,w,harp,drum,tambourine
+87,22,3,0,w,violin,harp,piano
+88,22,3,0,w,flute,guitar,xylophone
+89,22,3,0,w,cuckoo clock,basketball,glass
+90,22,3,0,w,toilet,paper,whistle
+91,22,3,0,w,xylophone,drum,harp
+92,22,3,0,w,rooster,dog,songbird
+93,22,3,0,w,whistle,glass,paper
+94,22,3,0,w,bell,harp,xylophone
+95,22,3,0,w,piano,flute,tambourine
+96,22,3,0,w,violin,tambourine,trumpet
+97,22,3,0,w,sheep,cow,songbird
+98,22,3,0,w,paper,ping pong,toilet
+99,22,3,0,w,pig,cow,duck
+100,22,3,0,w,xylophone,guitar,harp
+101,22,3,0,w,tambourine,flute,harp
+102,22,3,0,w,phone,camera,ping pong
+103,22,3,0,w,sheep,dog,songbird
+104,22,3,0,w,doorbell,basketball,whistle
+105,22,3,0,w,ping pong,basketball,camera
+106,22,3,0,w,rooster,duck,pig
+107,22,3,0,w,guitar,violin,xylophone
+108,22,3,0,w,cat,duck,sheep
+109,22,3,0,w,piano,trumpet,violin
+110,22,3,0,w,cow,cat,frog
+111,22,3,0,w,flute,piano,xylophone
+112,22,3,0,w,xylophone,flute,guitar
+113,22,3,0,w,toilet,camera,doorbell
+114,22,3,0,w,guitar,bell,harp
+115,22,3,0,w,bell,guitar,violin
+116,22,3,0,w,guitar,drum,trumpet
+117,22,3,0,w,glass,phone,toilet
+118,22,3,0,w,basketball,basketball,glass
+119,22,3,0,w,doorbell,basketball,toilet
+120,22,3,0,w,harp,guitar,trumpet
+121,22,3,0,w,guitar,tambourine,xylophone
+122,22,3,0,w,drum,flute,harp
+123,22,3,0,w,cuckoo clock,basketball,toilet
+124,22,3,0,w,rooster,duck,frog
+125,22,3,0,w,bell,flute,piano
+126,22,3,0,w,violin,drum,xylophone
+127,22,3,0,w,cat,cow,frog
+128,22,3,0,w,horse,cow,frog
+129,22,3,0,w,duck,frog,horse
+130,22,3,0,w,frog,cow,dog
+131,22,3,0,w,whistle,doorbell,toilet
+132,22,3,0,w,harp,bell,violin
+133,22,3,0,w,cuckoo clock,toilet,whistle
+134,22,3,0,w,basketball,glass,toilet
+135,22,3,0,w,doorbell,camera,toilet
+136,22,3,0,w,cow,pig,sheep
+137,22,3,0,w,bell,piano,trumpet
+138,22,3,0,w,glass,basketball,camera
+139,22,3,0,w,duck,horse,pig
+140,22,3,0,w,toilet,glass,paper
+141,22,3,0,w,horse,rooster,sheep
+142,22,3,0,w,horse,dog,songbird
+143,22,3,0,w,basketball,glass,phone
+144,22,3,0,w,dog,duck,songbird
+145,22,3,0,w,rooster,cat,cow
+146,22,3,0,w,cat,cow,duck
+147,22,3,0,w,dog,duck,pig
+148,22,3,0,w,camera,glass,phone
+149,22,3,0,w,glass,paper,whistle
+150,22,3,0,w,trumpet,harp,tambourine
+151,22,3,0,w,duck,pig,rooster
+152,22,3,0,w,guitar,flute,piano
+153,22,3,0,w,tambourine,flute,violin
+154,22,3,0,w,guitar,guitar,harp
+155,22,3,0,w,flute,drum,xylophone
+156,22,3,0,w,frog,dog,horse
+157,22,3,0,w,ping pong,camera,phone
+158,22,3,0,w,drum,flute,guitar

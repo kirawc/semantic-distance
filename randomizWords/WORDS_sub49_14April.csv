@@ -1,0 +1,159 @@
+,sub,set,split,modality,prompt,opt1,opt2
+0,49,6,6,w,frog,cow,horse
+1,49,6,6,w,duck,cat,pig
+2,49,6,6,w,flute,tambourine,trumpet
+3,49,6,6,w,sheep,frog,pig
+4,49,6,6,w,camera,basketball,cuckoo clock
+5,49,6,6,w,toilet,paper,phone
+6,49,6,6,w,cat,rooster,songbird
+7,49,6,6,w,sheep,horse,songbird
+8,49,6,6,w,tambourine,flute,guitar
+9,49,6,6,w,violin,bell,tambourine
+10,49,6,6,w,rooster,frog,sheep
+11,49,6,6,w,piano,harp,violin
+12,49,6,6,w,pig,cow,rooster
+13,49,6,6,w,phone,doorbell,ping pong
+14,49,6,6,w,guitar,bell,xylophone
+15,49,6,6,w,cuckoo clock,ping pong,toilet
+16,49,6,6,w,toilet,camera,ping pong
+17,49,6,6,w,flute,bell,tambourine
+18,49,6,6,w,toilet,cuckoo clock,glass
+19,49,6,6,w,bell,drum,flute
+20,49,6,6,w,drum,bell,harp
+21,49,6,6,w,paper,ping pong,whistle
+22,49,6,6,w,frog,dog,duck
+23,49,6,6,w,whistle,basketball,whistle
+24,49,6,6,w,whistle,phone,toilet
+25,49,6,6,w,ping pong,toilet,whistle
+26,49,6,6,w,glass,paper,phone
+27,49,6,6,w,xylophone,harp,tambourine
+28,49,6,6,w,songbird,dog,rooster
+29,49,6,6,w,horse,cat,cow
+30,49,6,6,w,horse,duck,frog
+31,49,6,6,w,ping pong,cuckoo clock,doorbell
+32,49,6,6,w,doorbell,cuckoo clock,whistle
+33,49,6,6,w,flute,harp,violin
+34,49,6,6,w,songbird,cow,sheep
+35,49,6,6,w,paper,cuckoo clock,glass
+36,49,6,6,w,whistle,camera,phone
+37,49,6,6,w,basketball,cuckoo clock,paper
+38,49,6,6,w,horse,duck,rooster
+39,49,6,6,w,tambourine,harp,violin
+40,49,6,6,w,piano,flute,violin
+41,49,6,6,w,frog,cow,duck
+42,49,6,6,w,tambourine,bell,harp
+43,49,6,6,w,songbird,cat,cow
+44,49,6,6,w,rooster,duck,rooster
+45,49,6,6,w,cuckoo clock,camera,toilet
+46,49,6,6,w,sheep,cow,frog
+47,49,6,6,w,rooster,frog,songbird
+48,49,6,6,w,songbird,duck,pig
+49,49,6,6,w,phone,basketball,whistle
+50,49,6,6,w,paper,basketball,cuckoo clock
+51,49,6,6,w,duck,pig,songbird
+52,49,6,6,w,cat,horse,songbird
+53,49,6,6,w,basketball,camera,glass
+54,49,6,6,w,harp,piano,violin
+55,49,6,6,w,pig,rooster,songbird
+56,49,6,6,w,cuckoo clock,doorbell,phone
+57,49,6,6,w,dog,cow,pig
+58,49,6,6,w,phone,doorbell,toilet
+59,49,6,6,w,sheep,cat,cow
+60,49,6,6,w,glass,basketball,phone
+61,49,6,6,w,basketball,phone,whistle
+62,49,6,6,w,toilet,glass,whistle
+63,49,6,6,w,trumpet,bell,guitar
+64,49,6,6,w,cuckoo clock,camera,whistle
+65,49,6,6,w,bell,drum,trumpet
+66,49,6,6,w,violin,bell,drum
+67,49,6,6,w,cow,duck,songbird
+68,49,6,6,w,pig,cow,horse
+69,49,6,6,w,toilet,basketball,cuckoo clock
+70,49,6,6,w,horse,cat,frog
+71,49,6,6,w,harp,guitar,xylophone
+72,49,6,6,w,xylophone,drum,flute
+73,49,6,6,w,glass,toilet,whistle
+74,49,6,6,w,piano,bell,drum
+75,49,6,6,w,xylophone,guitar,trumpet
+76,49,6,6,w,doorbell,basketball,glass
+77,49,6,6,w,violin,flute,trumpet
+78,49,6,6,w,songbird,duck,rooster
+79,49,6,6,w,tambourine,drum,flute
+80,49,6,6,w,harp,trumpet,violin
+81,49,6,6,w,xylophone,guitar,violin
+82,49,6,6,w,duck,horse,sheep
+83,49,6,6,w,phone,doorbell,paper
+84,49,6,6,w,violin,drum,guitar
+85,49,6,6,w,trumpet,bell,xylophone
+86,49,6,6,w,drum,trumpet,xylophone
+87,49,6,6,w,cat,duck,rooster
+88,49,6,6,w,paper,glass,phone
+89,49,6,6,w,doorbell,doorbell,phone
+90,49,6,6,w,phone,toilet,whistle
+91,49,6,6,w,ping pong,paper,phone
+92,49,6,6,w,rooster,pig,sheep
+93,49,6,6,w,tambourine,bell,trumpet
+94,49,6,6,w,flute,bell,drum
+95,49,6,6,w,dog,frog,songbird
+96,49,6,6,w,whistle,cuckoo clock,ping pong
+97,49,6,6,w,harp,flute,tambourine
+98,49,6,6,w,guitar,drum,tambourine
+99,49,6,6,w,basketball,paper,toilet
+100,49,6,6,w,camera,phone,ping pong
+101,49,6,6,w,doorbell,cuckoo clock,phone
+102,49,6,6,w,pig,cow,songbird
+103,49,6,6,w,cow,dog,rooster
+104,49,6,6,w,guitar,tambourine,violin
+105,49,6,6,w,ping pong,phone,toilet
+106,49,6,6,w,piano,guitar,tambourine
+107,49,6,6,w,pig,rooster,sheep
+108,49,6,6,w,guitar,flute,trumpet
+109,49,6,6,w,cuckoo clock,basketball,paper
+110,49,6,6,w,dog,cat,duck
+111,49,6,6,w,cat,pig,sheep
+112,49,6,6,w,doorbell,ping pong,toilet
+113,49,6,6,w,camera,phone,whistle
+114,49,6,6,w,trumpet,guitar,piano
+115,49,6,6,w,bell,guitar,harp
+116,49,6,6,w,glass,doorbell,ping pong
+117,49,6,6,w,bell,harp,trumpet
+118,49,6,6,w,dog,cat,songbird
+119,49,6,6,w,whistle,paper,phone
+120,49,6,6,w,cow,sheep,songbird
+121,49,6,6,w,duck,frog,rooster
+122,49,6,6,w,drum,bell,trumpet
+123,49,6,6,w,piano,tambourine,trumpet
+124,49,6,6,w,paper,glass,toilet
+125,49,6,6,w,trumpet,bell,harp
+126,49,6,6,w,bell,tambourine,xylophone
+127,49,6,6,w,doorbell,basketball,paper
+128,49,6,6,w,horse,cat,sheep
+129,49,6,6,w,flute,bell,guitar
+130,49,6,6,w,drum,flute,piano
+131,49,6,6,w,drum,guitar,violin
+132,49,6,6,w,duck,cat,rooster
+133,49,6,6,w,camera,cuckoo clock,toilet
+134,49,6,6,w,sheep,rooster,songbird
+135,49,6,6,w,violin,violin,xylophone
+136,49,6,6,w,cow,dog,sheep
+137,49,6,6,w,basketball,cuckoo clock,whistle
+138,49,6,6,w,xylophone,harp,trumpet
+139,49,6,6,w,bell,piano,violin
+140,49,6,6,w,ping pong,basketball,phone
+141,49,6,6,w,camera,paper,ping pong
+142,49,6,6,w,pig,horse,sheep
+143,49,6,6,w,paper,cuckoo clock,phone
+144,49,6,6,w,xylophone,harp,piano
+145,49,6,6,w,dog,pig,rooster
+146,49,6,6,w,frog,rooster,sheep
+147,49,6,6,w,sheep,duck,rooster
+148,49,6,6,w,rooster,dog,sheep
+149,49,6,6,w,cat,cow,dog
+150,49,6,6,w,glass,camera,ping pong
+151,49,6,6,w,trumpet,flute,harp
+152,49,6,6,w,cow,cat,songbird
+153,49,6,6,w,harp,tambourine,violin
+154,49,6,6,w,cuckoo clock,paper,toilet
+155,49,6,6,w,frog,cat,cow
+156,49,6,6,w,guitar,drum,harp
+157,49,6,6,w,guitar,drum,flute

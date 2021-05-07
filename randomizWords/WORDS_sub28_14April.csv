@@ -1,0 +1,159 @@
+,sub,set,split,modality,prompt,opt1,opt2
+0,28,3,6,w,glass,basketball,phone
+1,28,3,6,w,drum,bell,harp
+2,28,3,6,w,bell,harp,trumpet
+3,28,3,6,w,bell,drum,trumpet
+4,28,3,6,w,violin,flute,trumpet
+5,28,3,6,w,paper,glass,phone
+6,28,3,6,w,basketball,paper,toilet
+7,28,3,6,w,guitar,tambourine,violin
+8,28,3,6,w,trumpet,guitar,piano
+9,28,3,6,w,toilet,camera,ping pong
+10,28,3,6,w,ping pong,cuckoo clock,doorbell
+11,28,3,6,w,pig,horse,sheep
+12,28,3,6,w,harp,piano,violin
+13,28,3,6,w,doorbell,ping pong,toilet
+14,28,3,6,w,cuckoo clock,paper,toilet
+15,28,3,6,w,xylophone,guitar,trumpet
+16,28,3,6,w,frog,cat,cow
+17,28,3,6,w,ping pong,phone,toilet
+18,28,3,6,w,cuckoo clock,doorbell,phone
+19,28,3,6,w,frog,cow,horse
+20,28,3,6,w,piano,bell,drum
+21,28,3,6,w,bell,piano,violin
+22,28,3,6,w,guitar,drum,flute
+23,28,3,6,w,dog,pig,rooster
+24,28,3,6,w,basketball,cuckoo clock,whistle
+25,28,3,6,w,basketball,phone,whistle
+26,28,3,6,w,cow,duck,songbird
+27,28,3,6,w,duck,frog,rooster
+28,28,3,6,w,guitar,bell,xylophone
+29,28,3,6,w,phone,doorbell,ping pong
+30,28,3,6,w,songbird,dog,rooster
+31,28,3,6,w,guitar,drum,harp
+32,28,3,6,w,doorbell,basketball,paper
+33,28,3,6,w,sheep,duck,rooster
+34,28,3,6,w,cat,pig,sheep
+35,28,3,6,w,pig,cow,songbird
+36,28,3,6,w,frog,rooster,sheep
+37,28,3,6,w,tambourine,harp,violin
+38,28,3,6,w,doorbell,cuckoo clock,whistle
+39,28,3,6,w,ping pong,paper,phone
+40,28,3,6,w,phone,toilet,whistle
+41,28,3,6,w,drum,flute,piano
+42,28,3,6,w,paper,ping pong,whistle
+43,28,3,6,w,piano,guitar,tambourine
+44,28,3,6,w,camera,paper,ping pong
+45,28,3,6,w,whistle,paper,phone
+46,28,3,6,w,trumpet,bell,guitar
+47,28,3,6,w,harp,trumpet,violin
+48,28,3,6,w,paper,cuckoo clock,phone
+49,28,3,6,w,harp,tambourine,violin
+50,28,3,6,w,cuckoo clock,basketball,paper
+51,28,3,6,w,ping pong,toilet,whistle
+52,28,3,6,w,cow,dog,rooster
+53,28,3,6,w,violin,violin,xylophone
+54,28,3,6,w,phone,basketball,whistle
+55,28,3,6,w,camera,basketball,cuckoo clock
+56,28,3,6,w,tambourine,flute,guitar
+57,28,3,6,w,rooster,dog,sheep
+58,28,3,6,w,basketball,camera,glass
+59,28,3,6,w,glass,camera,ping pong
+60,28,3,6,w,rooster,duck,rooster
+61,28,3,6,w,violin,bell,tambourine
+62,28,3,6,w,guitar,drum,tambourine
+63,28,3,6,w,toilet,basketball,cuckoo clock
+64,28,3,6,w,trumpet,bell,xylophone
+65,28,3,6,w,flute,bell,guitar
+66,28,3,6,w,xylophone,harp,trumpet
+67,28,3,6,w,tambourine,drum,flute
+68,28,3,6,w,horse,cat,cow
+69,28,3,6,w,drum,guitar,violin
+70,28,3,6,w,sheep,horse,songbird
+71,28,3,6,w,cow,cat,songbird
+72,28,3,6,w,dog,cow,pig
+73,28,3,6,w,toilet,glass,whistle
+74,28,3,6,w,bell,drum,flute
+75,28,3,6,w,whistle,phone,toilet
+76,28,3,6,w,tambourine,bell,harp
+77,28,3,6,w,rooster,pig,sheep
+78,28,3,6,w,harp,guitar,xylophone
+79,28,3,6,w,piano,tambourine,trumpet
+80,28,3,6,w,trumpet,bell,harp
+81,28,3,6,w,bell,tambourine,xylophone
+82,28,3,6,w,dog,cat,songbird
+83,28,3,6,w,pig,cow,rooster
+84,28,3,6,w,piano,harp,violin
+85,28,3,6,w,horse,duck,rooster
+86,28,3,6,w,pig,cow,horse
+87,28,3,6,w,cat,horse,songbird
+88,28,3,6,w,glass,doorbell,ping pong
+89,28,3,6,w,songbird,duck,pig
+90,28,3,6,w,duck,cat,pig
+91,28,3,6,w,toilet,paper,phone
+92,28,3,6,w,flute,tambourine,trumpet
+93,28,3,6,w,xylophone,drum,flute
+94,28,3,6,w,piano,flute,violin
+95,28,3,6,w,cuckoo clock,ping pong,toilet
+96,28,3,6,w,cuckoo clock,camera,toilet
+97,28,3,6,w,whistle,cuckoo clock,ping pong
+98,28,3,6,w,xylophone,guitar,violin
+99,28,3,6,w,cat,rooster,songbird
+100,28,3,6,w,paper,cuckoo clock,glass
+101,28,3,6,w,horse,cat,frog
+102,28,3,6,w,violin,drum,guitar
+103,28,3,6,w,horse,duck,frog
+104,28,3,6,w,drum,bell,trumpet
+105,28,3,6,w,paper,glass,toilet
+106,28,3,6,w,violin,bell,drum
+107,28,3,6,w,dog,cat,duck
+108,28,3,6,w,cow,sheep,songbird
+109,28,3,6,w,ping pong,basketball,phone
+110,28,3,6,w,dog,frog,songbird
+111,28,3,6,w,frog,cow,duck
+112,28,3,6,w,cat,cow,dog
+113,28,3,6,w,sheep,cow,frog
+114,28,3,6,w,flute,bell,tambourine
+115,28,3,6,w,bell,guitar,harp
+116,28,3,6,w,camera,phone,ping pong
+117,28,3,6,w,rooster,frog,sheep
+118,28,3,6,w,flute,harp,violin
+119,28,3,6,w,xylophone,harp,piano
+120,28,3,6,w,phone,doorbell,toilet
+121,28,3,6,w,drum,trumpet,xylophone
+122,28,3,6,w,camera,cuckoo clock,toilet
+123,28,3,6,w,horse,cat,sheep
+124,28,3,6,w,harp,flute,tambourine
+125,28,3,6,w,duck,horse,sheep
+126,28,3,6,w,pig,rooster,sheep
+127,28,3,6,w,doorbell,basketball,glass
+128,28,3,6,w,toilet,cuckoo clock,glass
+129,28,3,6,w,trumpet,flute,harp
+130,28,3,6,w,sheep,rooster,songbird
+131,28,3,6,w,cow,dog,sheep
+132,28,3,6,w,songbird,duck,rooster
+133,28,3,6,w,duck,pig,songbird
+134,28,3,6,w,whistle,camera,phone
+135,28,3,6,w,xylophone,harp,tambourine
+136,28,3,6,w,tambourine,bell,trumpet
+137,28,3,6,w,paper,basketball,cuckoo clock
+138,28,3,6,w,glass,toilet,whistle
+139,28,3,6,w,camera,phone,whistle
+140,28,3,6,w,cat,duck,rooster
+141,28,3,6,w,phone,doorbell,paper
+142,28,3,6,w,pig,rooster,songbird
+143,28,3,6,w,sheep,cat,cow
+144,28,3,6,w,doorbell,cuckoo clock,phone
+145,28,3,6,w,doorbell,doorbell,phone
+146,28,3,6,w,flute,bell,drum
+147,28,3,6,w,guitar,flute,trumpet
+148,28,3,6,w,glass,paper,phone
+149,28,3,6,w,songbird,cat,cow
+150,28,3,6,w,whistle,basketball,whistle
+151,28,3,6,w,basketball,cuckoo clock,paper
+152,28,3,6,w,songbird,cow,sheep
+153,28,3,6,w,rooster,frog,songbird
+154,28,3,6,w,cuckoo clock,camera,whistle
+155,28,3,6,w,sheep,frog,pig
+156,28,3,6,w,duck,cat,rooster
+157,28,3,6,w,frog,dog,duck

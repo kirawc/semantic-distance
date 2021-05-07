@@ -1,0 +1,160 @@
+,sub,set,split,modality,prompt,opt1,opt2
+0,10,1,2,w,trumpet,bell,violin
+1,10,1,2,w,frog,duck,horse
+2,10,1,2,w,harp,flute,guitar
+3,10,1,2,w,guitar,bell,trumpet
+4,10,1,2,w,glass,doorbell,whistle
+5,10,1,2,w,cat,horse,pig
+6,10,1,2,w,glass,doorbell,phone
+7,10,1,2,w,camera,toilet,whistle
+8,10,1,2,w,flute,guitar,piano
+9,10,1,2,w,camera,cuckoo clock,doorbell
+10,10,1,2,w,xylophone,bell,trumpet
+11,10,1,2,w,songbird,cat,dog
+12,10,1,2,w,dog,rooster,sheep
+13,10,1,2,w,violin,drum,harp
+14,10,1,2,w,whistle,basketball,camera
+15,10,1,2,w,piano,guitar,harp
+16,10,1,2,w,toilet,cuckoo clock,whistle
+17,10,1,2,w,horse,pig,songbird
+18,10,1,2,w,sheep,pig,songbird
+19,10,1,2,w,violin,drum,trumpet
+20,10,1,2,w,ping pong,doorbell,whistle
+21,10,1,2,w,songbird,cow,frog
+22,10,1,2,w,cat,frog,rooster
+23,10,1,2,w,piano,piano,violin
+24,10,1,2,w,ping pong,basketball,ping pong
+25,10,1,2,w,basketball,paper,phone
+26,10,1,2,w,bell,guitar,tambourine
+27,10,1,2,w,horse,cat,pig
+28,10,1,2,w,duck,cat,frog
+29,10,1,2,w,sheep,horse,pig
+30,10,1,2,w,glass,cuckoo clock,paper
+31,10,1,2,w,songbird,cow,duck
+32,10,1,2,w,camera,basketball,toilet
+33,10,1,2,w,cat,pig,songbird
+34,10,1,2,w,xylophone,bell,piano
+35,10,1,2,w,drum,harp,piano
+36,10,1,2,w,phone,camera,doorbell
+37,10,1,2,w,whistle,basketball,doorbell
+38,10,1,2,w,tambourine,bell,drum
+39,10,1,2,w,drum,flute,tambourine
+40,10,1,2,w,trumpet,harp,xylophone
+41,10,1,2,w,sheep,duck,horse
+42,10,1,2,w,violin,tambourine,xylophone
+43,10,1,2,w,toilet,phone,ping pong
+44,10,1,2,w,xylophone,bell,guitar
+45,10,1,2,w,glass,phone,whistle
+46,10,1,2,w,violin,guitar,piano
+47,10,1,2,w,tambourine,flute,tambourine
+48,10,1,2,w,camera,cuckoo clock,phone
+49,10,1,2,w,doorbell,basketball,phone
+50,10,1,2,w,ping pong,camera,glass
+51,10,1,2,w,guitar,piano,tambourine
+52,10,1,2,w,ping pong,basketball,doorbell
+53,10,1,2,w,harp,drum,violin
+54,10,1,2,w,paper,camera,toilet
+55,10,1,2,w,doorbell,camera,phone
+56,10,1,2,w,xylophone,drum,violin
+57,10,1,2,w,duck,dog,frog
+58,10,1,2,w,frog,horse,sheep
+59,10,1,2,w,rooster,cow,dog
+60,10,1,2,w,horse,frog,rooster
+61,10,1,2,w,dog,cow,frog
+62,10,1,2,w,cow,rooster,songbird
+63,10,1,2,w,basketball,doorbell,ping pong
+64,10,1,2,w,guitar,drum,piano
+65,10,1,2,w,piano,drum,xylophone
+66,10,1,2,w,basketball,camera,phone
+67,10,1,2,w,horse,dog,sheep
+68,10,1,2,w,glass,cuckoo clock,toilet
+69,10,1,2,w,guitar,trumpet,xylophone
+70,10,1,2,w,pig,duck,songbird
+71,10,1,2,w,drum,bell,guitar
+72,10,1,2,w,horse,cat,rooster
+73,10,1,2,w,trumpet,bell,drum
+74,10,1,2,w,drum,bell,xylophone
+75,10,1,2,w,glass,phone,ping pong
+76,10,1,2,w,ping pong,glass,phone
+77,10,1,2,w,cat,dog,pig
+78,10,1,2,w,toilet,camera,glass
+79,10,1,2,w,harp,piano,trumpet
+80,10,1,2,w,basketball,camera,ping pong
+81,10,1,2,w,cuckoo clock,basketball,phone
+82,10,1,2,w,paper,basketball,glass
+83,10,1,2,w,pig,dog,sheep
+84,10,1,2,w,cuckoo clock,doorbell,glass
+85,10,1,2,w,piano,guitar,xylophone
+86,10,1,2,w,pig,sheep,songbird
+87,10,1,2,w,rooster,cat,dog
+88,10,1,2,w,doorbell,glass,paper
+89,10,1,2,w,doorbell,camera,cuckoo clock
+90,10,1,2,w,duck,cow,sheep
+91,10,1,2,w,phone,cuckoo clock,toilet
+92,10,1,2,w,paper,phone,toilet
+93,10,1,2,w,bell,drum,piano
+94,10,1,2,w,frog,pig,rooster
+95,10,1,2,w,basketball,cuckoo clock,ping pong
+96,10,1,2,w,trumpet,flute,xylophone
+97,10,1,2,w,camera,basketball,glass
+98,10,1,2,w,cow,dog,songbird
+99,10,1,2,w,drum,tambourine,trumpet
+100,10,1,2,w,xylophone,guitar,tambourine
+101,10,1,2,w,frog,horse,pig
+102,10,1,2,w,songbird,cat,sheep
+103,10,1,2,w,pig,frog,songbird
+104,10,1,2,w,dog,duck,frog
+105,10,1,2,w,phone,doorbell,whistle
+106,10,1,2,w,frog,horse,rooster
+107,10,1,2,w,flute,drum,tambourine
+108,10,1,2,w,cow,cat,sheep
+109,10,1,2,w,flute,violin,xylophone
+110,10,1,2,w,trumpet,piano,tambourine
+111,10,1,2,w,cow,duck,sheep
+112,10,1,2,w,rooster,duck,sheep
+113,10,1,2,w,cuckoo clock,paper,phone
+114,10,1,2,w,rooster,dog,pig
+115,10,1,2,w,harp,drum,xylophone
+116,10,1,2,w,piano,drum,trumpet
+117,10,1,2,w,phone,camera,whistle
+118,10,1,2,w,bell,flute,violin
+119,10,1,2,w,dog,cat,horse
+120,10,1,2,w,pig,cat,songbird
+121,10,1,2,w,songbird,cat,pig
+122,10,1,2,w,songbird,horse,sheep
+123,10,1,2,w,phone,ping pong,whistle
+124,10,1,2,w,toilet,glass,ping pong
+125,10,1,2,w,whistle,cuckoo clock,paper
+126,10,1,2,w,ping pong,cuckoo clock,glass
+127,10,1,2,w,whistle,camera,glass
+128,10,1,2,w,toilet,doorbell,phone
+129,10,1,2,w,bell,flute,trumpet
+130,10,1,2,w,flute,drum,harp
+131,10,1,2,w,cat,frog,horse
+132,10,1,2,w,piano,tambourine,xylophone
+133,10,1,2,w,sheep,dog,pig
+134,10,1,2,w,bell,drum,violin
+135,10,1,2,w,duck,cow,pig
+136,10,1,2,w,toilet,camera,whistle
+137,10,1,2,w,sheep,cat,duck
+138,10,1,2,w,paper,cuckoo clock,ping pong
+139,10,1,2,w,flute,drum,trumpet
+140,10,1,2,w,cuckoo clock,doorbell,ping pong
+141,10,1,2,w,cuckoo clock,paper,whistle
+142,10,1,2,w,duck,cow,dog
+143,10,1,2,w,flute,guitar,trumpet
+144,10,1,2,w,frog,cow,songbird
+145,10,1,2,w,cow,rooster,sheep
+146,10,1,2,w,violin,bell,guitar
+147,10,1,2,w,harp,drum,flute
+148,10,1,2,w,violin,guitar,harp
+149,10,1,2,w,dog,cow,horse
+150,10,1,2,w,tambourine,drum,trumpet
+151,10,1,2,w,rooster,dog,horse
+152,10,1,2,w,tambourine,violin,xylophone
+153,10,1,2,w,paper,glass,ping pong
+154,10,1,2,w,tambourine,bell,flute
+155,10,1,2,w,whistle,camera,doorbell
+156,10,1,2,w,guitar,bell,violin
+157,10,1,2,w,doorbell,paper,whistle
+158,10,1,2,w,dog,frog,pig

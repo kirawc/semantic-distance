@@ -1,0 +1,160 @@
+,sub,set,split,modality,prompt,opt1,opt2
+0,99,14,0,w,dog,duck,pig
+1,99,14,0,w,violin,harp,piano
+2,99,14,0,w,harp,piano,tambourine
+3,99,14,0,w,duck,horse,rooster
+4,99,14,0,w,cow,frog,sheep
+5,99,14,0,w,piano,flute,tambourine
+6,99,14,0,w,whistle,doorbell,toilet
+7,99,14,0,w,toilet,camera,doorbell
+8,99,14,0,w,sheep,cat,horse
+9,99,14,0,w,doorbell,basketball,toilet
+10,99,14,0,w,cat,duck,sheep
+11,99,14,0,w,songbird,cow,horse
+12,99,14,0,w,glass,basketball,camera
+13,99,14,0,w,ping pong,basketball,camera
+14,99,14,0,w,glass,paper,ping pong
+15,99,14,0,w,cuckoo clock,basketball,toilet
+16,99,14,0,w,doorbell,glass,whistle
+17,99,14,0,w,ping pong,basketball,whistle
+18,99,14,0,w,xylophone,flute,guitar
+19,99,14,0,w,guitar,drum,trumpet
+20,99,14,0,w,cuckoo clock,basketball,glass
+21,99,14,0,w,toilet,glass,paper
+22,99,14,0,w,pig,dog,pig
+23,99,14,0,w,piano,trumpet,violin
+24,99,14,0,w,songbird,cat,frog
+25,99,14,0,w,sheep,cow,duck
+26,99,14,0,w,xylophone,drum,tambourine
+27,99,14,0,w,flute,trumpet,violin
+28,99,14,0,w,cow,cat,frog
+29,99,14,0,w,sheep,cat,dog
+30,99,14,0,w,trumpet,harp,tambourine
+31,99,14,0,w,xylophone,drum,harp
+32,99,14,0,w,drum,bell,piano
+33,99,14,0,w,flute,harp,tambourine
+34,99,14,0,w,camera,glass,toilet
+35,99,14,0,w,violin,tambourine,trumpet
+36,99,14,0,w,paper,camera,doorbell
+37,99,14,0,w,basketball,glass,phone
+38,99,14,0,w,tambourine,bell,piano
+39,99,14,0,w,pig,cat,dog
+40,99,14,0,w,phone,doorbell,glass
+41,99,14,0,w,horse,dog,songbird
+42,99,14,0,w,bell,guitar,violin
+43,99,14,0,w,bell,harp,xylophone
+44,99,14,0,w,doorbell,paper,phone
+45,99,14,0,w,toilet,doorbell,whistle
+46,99,14,0,w,phone,basketball,camera
+47,99,14,0,w,flute,guitar,xylophone
+48,99,14,0,w,toilet,doorbell,ping pong
+49,99,14,0,w,frog,dog,horse
+50,99,14,0,w,flute,piano,xylophone
+51,99,14,0,w,ping pong,camera,cuckoo clock
+52,99,14,0,w,pig,cow,duck
+53,99,14,0,w,trumpet,guitar,tambourine
+54,99,14,0,w,rooster,duck,pig
+55,99,14,0,w,rooster,cat,cow
+56,99,14,0,w,piano,harp,tambourine
+57,99,14,0,w,harp,guitar,trumpet
+58,99,14,0,w,whistle,doorbell,glass
+59,99,14,0,w,camera,cuckoo clock,paper
+60,99,14,0,w,phone,camera,ping pong
+61,99,14,0,w,pig,frog,rooster
+62,99,14,0,w,xylophone,guitar,harp
+63,99,14,0,w,guitar,bell,harp
+64,99,14,0,w,sheep,dog,songbird
+65,99,14,0,w,camera,basketball,doorbell
+66,99,14,0,w,whistle,glass,paper
+67,99,14,0,w,harp,drum,trumpet
+68,99,14,0,w,harp,bell,violin
+69,99,14,0,w,phone,paper,ping pong
+70,99,14,0,w,paper,glass,whistle
+71,99,14,0,w,phone,phone,toilet
+72,99,14,0,w,violin,drum,xylophone
+73,99,14,0,w,rooster,duck,frog
+74,99,14,0,w,doorbell,basketball,whistle
+75,99,14,0,w,guitar,guitar,harp
+76,99,14,0,w,duck,frog,songbird
+77,99,14,0,w,xylophone,tambourine,violin
+78,99,14,0,w,guitar,tambourine,xylophone
+79,99,14,0,w,basketball,glass,ping pong
+80,99,14,0,w,songbird,cat,horse
+81,99,14,0,w,paper,doorbell,whistle
+82,99,14,0,w,cat,cow,duck
+83,99,14,0,w,duck,pig,rooster
+84,99,14,0,w,glass,paper,whistle
+85,99,14,0,w,violin,bell,xylophone
+86,99,14,0,w,basketball,camera,toilet
+87,99,14,0,w,piano,bell,xylophone
+88,99,14,0,w,bell,drum,harp
+89,99,14,0,w,basketball,cuckoo clock,phone
+90,99,14,0,w,frog,cat,horse
+91,99,14,0,w,ping pong,camera,phone
+92,99,14,0,w,dog,duck,songbird
+93,99,14,0,w,xylophone,flute,piano
+94,99,14,0,w,horse,cow,frog
+95,99,14,0,w,drum,guitar,piano
+96,99,14,0,w,camera,doorbell,whistle
+97,99,14,0,w,guitar,flute,piano
+98,99,14,0,w,trumpet,bell,piano
+99,99,14,0,w,dog,pig,sheep
+100,99,14,0,w,piano,bell,guitar
+101,99,14,0,w,horse,rooster,songbird
+102,99,14,0,w,flute,drum,xylophone
+103,99,14,0,w,cuckoo clock,basketball,ping pong
+104,99,14,0,w,drum,flute,harp
+105,99,14,0,w,ping pong,glass,paper
+106,99,14,0,w,cow,dog,frog
+107,99,14,0,w,sheep,cow,songbird
+108,99,14,0,w,tambourine,flute,harp
+109,99,14,0,w,cuckoo clock,toilet,whistle
+110,99,14,0,w,paper,phone,ping pong
+111,99,14,0,w,whistle,camera,ping pong
+112,99,14,0,w,rooster,cat,frog
+113,99,14,0,w,tambourine,flute,violin
+114,99,14,0,w,songbird,dog,duck
+115,99,14,0,w,horse,duck,sheep
+116,99,14,0,w,frog,cow,dog
+117,99,14,0,w,paper,ping pong,toilet
+118,99,14,0,w,cow,duck,pig
+119,99,14,0,w,cat,frog,pig
+120,99,14,0,w,camera,glass,phone
+121,99,14,0,w,paper,doorbell,phone
+122,99,14,0,w,tambourine,piano,xylophone
+123,99,14,0,w,duck,horse,pig
+124,99,14,0,w,harp,drum,tambourine
+125,99,14,0,w,trumpet,bell,flute
+126,99,14,0,w,horse,rooster,sheep
+127,99,14,0,w,glass,camera,phone
+128,99,14,0,w,rooster,dog,songbird
+129,99,14,0,w,camera,glass,ping pong
+130,99,14,0,w,pig,frog,horse
+131,99,14,0,w,bell,flute,piano
+132,99,14,0,w,dog,cat,frog
+133,99,14,0,w,toilet,paper,whistle
+134,99,14,0,w,basketball,basketball,glass
+135,99,14,0,w,whistle,camera,cuckoo clock
+136,99,14,0,w,horse,frog,pig
+137,99,14,0,w,songbird,frog,sheep
+138,99,14,0,w,frog,dog,pig
+139,99,14,0,w,drum,flute,guitar
+140,99,14,0,w,glass,phone,toilet
+141,99,14,0,w,cow,pig,sheep
+142,99,14,0,w,violin,drum,flute
+143,99,14,0,w,duck,frog,horse
+144,99,14,0,w,cat,rooster,sheep
+145,99,14,0,w,tambourine,flute,piano
+146,99,14,0,w,cat,dog,songbird
+147,99,14,0,w,dog,cow,sheep
+148,99,14,0,w,cuckoo clock,basketball,whistle
+149,99,14,0,w,harp,flute,xylophone
+150,99,14,0,w,drum,harp,violin
+151,99,14,0,w,trumpet,violin,xylophone
+152,99,14,0,w,bell,piano,trumpet
+153,99,14,0,w,cat,cow,frog
+154,99,14,0,w,basketball,glass,toilet
+155,99,14,0,w,sheep,cow,rooster
+156,99,14,0,w,guitar,violin,xylophone
+157,99,14,0,w,doorbell,camera,toilet
+158,99,14,0,w,frog,cat,dog

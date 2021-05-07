@@ -1,0 +1,159 @@
+,sub,set,split,modality,prompt,opt1,opt2
+0,110,15,4,w,duck,rooster,sheep
+1,110,15,4,w,whistle,camera,paper
+2,110,15,4,w,whistle,ping pong,toilet
+3,110,15,4,w,songbird,frog,rooster
+4,110,15,4,w,trumpet,drum,flute
+5,110,15,4,w,duck,cow,frog
+6,110,15,4,w,whistle,basketball,glass
+7,110,15,4,w,toilet,cuckoo clock,doorbell
+8,110,15,4,w,doorbell,phone,ping pong
+9,110,15,4,w,harp,bell,xylophone
+10,110,15,4,w,rooster,sheep,songbird
+11,110,15,4,w,doorbell,phone,whistle
+12,110,15,4,w,cuckoo clock,doorbell,whistle
+13,110,15,4,w,toilet,basketball,ping pong
+14,110,15,4,w,cow,frog,horse
+15,110,15,4,w,basketball,ping pong,whistle
+16,110,15,4,w,cuckoo clock,phone,whistle
+17,110,15,4,w,cat,frog,sheep
+18,110,15,4,w,duck,cat,cow
+19,110,15,4,w,bell,flute,xylophone
+20,110,15,4,w,glass,cuckoo clock,ping pong
+21,110,15,4,w,bell,harp,tambourine
+22,110,15,4,w,whistle,doorbell,phone
+23,110,15,4,w,sheep,cow,sheep
+24,110,15,4,w,glass,cuckoo clock,doorbell
+25,110,15,4,w,harp,tambourine,trumpet
+26,110,15,4,w,bell,piano,xylophone
+27,110,15,4,w,camera,paper,whistle
+28,110,15,4,w,cat,duck,pig
+29,110,15,4,w,phone,glass,toilet
+30,110,15,4,w,glass,cuckoo clock,phone
+31,110,15,4,w,frog,cat,frog
+32,110,15,4,w,flute,trumpet,xylophone
+33,110,15,4,w,guitar,trumpet,violin
+34,110,15,4,w,cat,sheep,songbird
+35,110,15,4,w,paper,basketball,whistle
+36,110,15,4,w,camera,doorbell,ping pong
+37,110,15,4,w,tambourine,guitar,harp
+38,110,15,4,w,duck,frog,pig
+39,110,15,4,w,frog,duck,rooster
+40,110,15,4,w,frog,cow,sheep
+41,110,15,4,w,xylophone,piano,violin
+42,110,15,4,w,pig,frog,sheep
+43,110,15,4,w,pig,duck,rooster
+44,110,15,4,w,cat,duck,songbird
+45,110,15,4,w,guitar,bell,flute
+46,110,15,4,w,dog,cow,duck
+47,110,15,4,w,cow,pig,songbird
+48,110,15,4,w,xylophone,piano,tambourine
+49,110,15,4,w,cow,cat,rooster
+50,110,15,4,w,tambourine,flute,xylophone
+51,110,15,4,w,camera,paper,phone
+52,110,15,4,w,doorbell,basketball,cuckoo clock
+53,110,15,4,w,horse,cow,sheep
+54,110,15,4,w,ping pong,cuckoo clock,whistle
+55,110,15,4,w,doorbell,camera,glass
+56,110,15,4,w,paper,camera,phone
+57,110,15,4,w,drum,piano,violin
+58,110,15,4,w,violin,guitar,xylophone
+59,110,15,4,w,rooster,cow,frog
+60,110,15,4,w,dog,cat,rooster
+61,110,15,4,w,duck,rooster,songbird
+62,110,15,4,w,horse,duck,songbird
+63,110,15,4,w,flute,piano,trumpet
+64,110,15,4,w,horse,dog,rooster
+65,110,15,4,w,dog,horse,rooster
+66,110,15,4,w,cow,cat,pig
+67,110,15,4,w,basketball,cuckoo clock,glass
+68,110,15,4,w,cow,duck,horse
+69,110,15,4,w,violin,trumpet,xylophone
+70,110,15,4,w,flute,bell,violin
+71,110,15,4,w,songbird,cat,duck
+72,110,15,4,w,paper,camera,whistle
+73,110,15,4,w,basketball,camera,cuckoo clock
+74,110,15,4,w,harp,drum,piano
+75,110,15,4,w,piano,flute,harp
+76,110,15,4,w,ping pong,basketball,toilet
+77,110,15,4,w,bell,piano,tambourine
+78,110,15,4,w,flute,guitar,tambourine
+79,110,15,4,w,sheep,dog,duck
+80,110,15,4,w,trumpet,flute,trumpet
+81,110,15,4,w,toilet,basketball,phone
+82,110,15,4,w,doorbell,cuckoo clock,paper
+83,110,15,4,w,glass,paper,toilet
+84,110,15,4,w,rooster,cat,songbird
+85,110,15,4,w,sheep,duck,songbird
+86,110,15,4,w,violin,bell,piano
+87,110,15,4,w,cuckoo clock,phone,ping pong
+88,110,15,4,w,tambourine,bell,violin
+89,110,15,4,w,whistle,cuckoo clock,phone
+90,110,15,4,w,phone,basketball,toilet
+91,110,15,4,w,basketball,doorbell,whistle
+92,110,15,4,w,harp,guitar,piano
+93,110,15,4,w,rooster,frog,horse
+94,110,15,4,w,drum,bell,tambourine
+95,110,15,4,w,basketball,paper,ping pong
+96,110,15,4,w,horse,dog,duck
+97,110,15,4,w,drum,tambourine,xylophone
+98,110,15,4,w,songbird,horse,pig
+99,110,15,4,w,horse,cow,pig
+100,110,15,4,w,cow,cow,songbird
+101,110,15,4,w,dog,frog,rooster
+102,110,15,4,w,ping pong,basketball,glass
+103,110,15,4,w,trumpet,drum,xylophone
+104,110,15,4,w,duck,cow,horse
+105,110,15,4,w,tambourine,harp,piano
+106,110,15,4,w,cat,frog,songbird
+107,110,15,4,w,songbird,cow,pig
+108,110,15,4,w,bell,harp,piano
+109,110,15,4,w,trumpet,drum,tambourine
+110,110,15,4,w,drum,guitar,xylophone
+111,110,15,4,w,cuckoo clock,camera,glass
+112,110,15,4,w,flute,bell,piano
+113,110,15,4,w,guitar,tambourine,trumpet
+114,110,15,4,w,phone,basketball,paper
+115,110,15,4,w,piano,drum,harp
+116,110,15,4,w,piano,trumpet,xylophone
+117,110,15,4,w,ping pong,cuckoo clock,phone
+118,110,15,4,w,pig,cat,frog
+119,110,15,4,w,paper,basketball,phone
+120,110,15,4,w,glass,cuckoo clock,whistle
+121,110,15,4,w,rooster,duck,songbird
+122,110,15,4,w,harp,bell,guitar
+123,110,15,4,w,xylophone,guitar,xylophone
+124,110,15,4,w,pig,cow,dog
+125,110,15,4,w,rooster,frog,pig
+126,110,15,4,w,tambourine,harp,trumpet
+127,110,15,4,w,paper,cuckoo clock,toilet
+128,110,15,4,w,tambourine,trumpet,xylophone
+129,110,15,4,w,pig,cat,horse
+130,110,15,4,w,toilet,camera,phone
+131,110,15,4,w,trumpet,flute,guitar
+132,110,15,4,w,xylophone,bell,drum
+133,110,15,4,w,guitar,harp,violin
+134,110,15,4,w,sheep,dog,rooster
+135,110,15,4,w,songbird,pig,rooster
+136,110,15,4,w,xylophone,flute,trumpet
+137,110,15,4,w,guitar,drum,xylophone
+138,110,15,4,w,violin,bell,trumpet
+139,110,15,4,w,phone,cuckoo clock,whistle
+140,110,15,4,w,sheep,horse,rooster
+141,110,15,4,w,cuckoo clock,paper,ping pong
+142,110,15,4,w,drum,tambourine,violin
+143,110,15,4,w,camera,doorbell,toilet
+144,110,15,4,w,dog,horse,sheep
+145,110,15,4,w,ping pong,phone,whistle
+146,110,15,4,w,piano,guitar,violin
+147,110,15,4,w,phone,paper,toilet
+148,110,15,4,w,piano,drum,guitar
+149,110,15,4,w,frog,cow,pig
+150,110,15,4,w,whistle,basketball,paper
+151,110,15,4,w,toilet,basketball,glass
+152,110,15,4,w,frog,dog,sheep
+153,110,15,4,w,trumpet,harp,violin
+154,110,15,4,w,violin,flute,tambourine
+155,110,15,4,w,drum,guitar,harp
+156,110,15,4,w,camera,cuckoo clock,glass
+157,110,15,4,w,phone,basketball,ping pong

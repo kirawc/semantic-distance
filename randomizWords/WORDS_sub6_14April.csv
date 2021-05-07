@@ -1,0 +1,159 @@
+,sub,set,split,modality,prompt,opt1,opt2
+0,6,0,5,w,phone,cuckoo clock,doorbell
+1,6,0,5,w,guitar,harp,piano
+2,6,0,5,w,cuckoo clock,glass,ping pong
+3,6,0,5,w,sheep,cat,frog
+4,6,0,5,w,frog,rooster,songbird
+5,6,0,5,w,songbird,pig,sheep
+6,6,0,5,w,frog,horse,songbird
+7,6,0,5,w,bell,tambourine,violin
+8,6,0,5,w,pig,duck,sheep
+9,6,0,5,w,xylophone,bell,violin
+10,6,0,5,w,rooster,cow,sheep
+11,6,0,5,w,cow,cat,duck
+12,6,0,5,w,trumpet,piano,xylophone
+13,6,0,5,w,basketball,cuckoo clock,toilet
+14,6,0,5,w,toilet,basketball,camera
+15,6,0,5,w,harp,harp,tambourine
+16,6,0,5,w,cuckoo clock,glass,phone
+17,6,0,5,w,guitar,harp,trumpet
+18,6,0,5,w,toilet,cuckoo clock,phone
+19,6,0,5,w,harp,violin,xylophone
+20,6,0,5,w,cuckoo clock,glass,toilet
+21,6,0,5,w,camera,ping pong,whistle
+22,6,0,5,w,dog,duck,horse
+23,6,0,5,w,glass,glass,whistle
+24,6,0,5,w,bell,violin,xylophone
+25,6,0,5,w,sheep,duck,frog
+26,6,0,5,w,piano,flute,guitar
+27,6,0,5,w,cuckoo clock,camera,paper
+28,6,0,5,w,piano,drum,violin
+29,6,0,5,w,glass,camera,toilet
+30,6,0,5,w,basketball,camera,doorbell
+31,6,0,5,w,duck,cow,songbird
+32,6,0,5,w,rooster,cat,duck
+33,6,0,5,w,piano,flute,trumpet
+34,6,0,5,w,pig,horse,songbird
+35,6,0,5,w,violin,piano,tambourine
+36,6,0,5,w,cat,dog,duck
+37,6,0,5,w,piano,drum,flute
+38,6,0,5,w,violin,flute,xylophone
+39,6,0,5,w,pig,dog,songbird
+40,6,0,5,w,doorbell,glass,toilet
+41,6,0,5,w,ping pong,camera,toilet
+42,6,0,5,w,camera,basketball,phone
+43,6,0,5,w,duck,dog,horse
+44,6,0,5,w,camera,camera,doorbell
+45,6,0,5,w,basketball,camera,paper
+46,6,0,5,w,pig,cat,sheep
+47,6,0,5,w,drum,piano,trumpet
+48,6,0,5,w,flute,piano,tambourine
+49,6,0,5,w,doorbell,basketball,ping pong
+50,6,0,5,w,paper,doorbell,glass
+51,6,0,5,w,pig,cow,frog
+52,6,0,5,w,pig,duck,frog
+53,6,0,5,w,cow,horse,pig
+54,6,0,5,w,tambourine,piano,trumpet
+55,6,0,5,w,phone,camera,toilet
+56,6,0,5,w,toilet,doorbell,paper
+57,6,0,5,w,xylophone,trumpet,violin
+58,6,0,5,w,ping pong,doorbell,paper
+59,6,0,5,w,trumpet,flute,violin
+60,6,0,5,w,tambourine,guitar,violin
+61,6,0,5,w,phone,glass,whistle
+62,6,0,5,w,doorbell,glass,ping pong
+63,6,0,5,w,ping pong,glass,whistle
+64,6,0,5,w,cuckoo clock,basketball,doorbell
+65,6,0,5,w,ping pong,basketball,paper
+66,6,0,5,w,doorbell,glass,phone
+67,6,0,5,w,tambourine,drum,violin
+68,6,0,5,w,violin,flute,harp
+69,6,0,5,w,bell,drum,tambourine
+70,6,0,5,w,drum,flute,xylophone
+71,6,0,5,w,whistle,doorbell,paper
+72,6,0,5,w,doorbell,camera,paper
+73,6,0,5,w,songbird,dog,sheep
+74,6,0,5,w,basketball,camera,whistle
+75,6,0,5,w,bell,guitar,trumpet
+76,6,0,5,w,violin,drum,piano
+77,6,0,5,w,horse,frog,sheep
+78,6,0,5,w,songbird,duck,horse
+79,6,0,5,w,rooster,cow,songbird
+80,6,0,5,w,camera,glass,paper
+81,6,0,5,w,trumpet,guitar,harp
+82,6,0,5,w,sheep,cow,pig
+83,6,0,5,w,cuckoo clock,cuckoo clock,paper
+84,6,0,5,w,piano,bell,harp
+85,6,0,5,w,phone,basketball,glass
+86,6,0,5,w,duck,cat,horse
+87,6,0,5,w,dog,frog,horse
+88,6,0,5,w,cow,horse,rooster
+89,6,0,5,w,doorbell,paper,toilet
+90,6,0,5,w,glass,doorbell,paper
+91,6,0,5,w,paper,camera,ping pong
+92,6,0,5,w,cat,dog,rooster
+93,6,0,5,w,dog,pig,songbird
+94,6,0,5,w,flute,guitar,violin
+95,6,0,5,w,sheep,dog,frog
+96,6,0,5,w,rooster,duck,horse
+97,6,0,5,w,frog,pig,sheep
+98,6,0,5,w,whistle,cuckoo clock,doorbell
+99,6,0,5,w,duck,cow,rooster
+100,6,0,5,w,cow,frog,songbird
+101,6,0,5,w,frog,dog,songbird
+102,6,0,5,w,dog,sheep,songbird
+103,6,0,5,w,harp,bell,flute
+104,6,0,5,w,whistle,doorbell,ping pong
+105,6,0,5,w,frog,duck,pig
+106,6,0,5,w,ping pong,doorbell,toilet
+107,6,0,5,w,glass,doorbell,toilet
+108,6,0,5,w,sheep,cow,dog
+109,6,0,5,w,paper,basketball,camera
+110,6,0,5,w,trumpet,tambourine,xylophone
+111,6,0,5,w,phone,ping pong,toilet
+112,6,0,5,w,drum,harp,xylophone
+113,6,0,5,w,guitar,piano,xylophone
+114,6,0,5,w,dog,horse,pig
+115,6,0,5,w,camera,phone,toilet
+116,6,0,5,w,cow,pig,rooster
+117,6,0,5,w,harp,bell,drum
+118,6,0,5,w,cat,duck,frog
+119,6,0,5,w,violin,piano,xylophone
+120,6,0,5,w,horse,dog,frog
+121,6,0,5,w,drum,bell,violin
+122,6,0,5,w,cat,dog,frog
+123,6,0,5,w,xylophone,drum,guitar
+124,6,0,5,w,tambourine,drum,guitar
+125,6,0,5,w,toilet,basketball,whistle
+126,6,0,5,w,songbird,dog,frog
+127,6,0,5,w,whistle,camera,toilet
+128,6,0,5,w,horse,pig,sheep
+129,6,0,5,w,whistle,basketball,toilet
+130,6,0,5,w,horse,horse,songbird
+131,6,0,5,w,guitar,harp,tambourine
+132,6,0,5,w,flute,drum,piano
+133,6,0,5,w,trumpet,flute,piano
+134,6,0,5,w,horse,cow,dog
+135,6,0,5,w,drum,harp,trumpet
+136,6,0,5,w,bell,drum,guitar
+137,6,0,5,w,paper,basketball,ping pong
+138,6,0,5,w,toilet,doorbell,glass
+139,6,0,5,w,cat,cow,pig
+140,6,0,5,w,tambourine,drum,harp
+141,6,0,5,w,duck,dog,pig
+142,6,0,5,w,bell,drum,xylophone
+143,6,0,5,w,songbird,cat,songbird
+144,6,0,5,w,xylophone,bell,tambourine
+145,6,0,5,w,harp,guitar,tambourine
+146,6,0,5,w,rooster,cow,pig
+147,6,0,5,w,duck,cat,dog
+148,6,0,5,w,trumpet,drum,harp
+149,6,0,5,w,xylophone,tambourine,trumpet
+150,6,0,5,w,paper,camera,glass
+151,6,0,5,w,flute,drum,violin
+152,6,0,5,w,phone,cuckoo clock,ping pong
+153,6,0,5,w,glass,basketball,whistle
+154,6,0,5,w,guitar,flute,xylophone
+155,6,0,5,w,basketball,phone,ping pong
+156,6,0,5,w,rooster,dog,frog
+157,6,0,5,w,flute,bell,trumpet
